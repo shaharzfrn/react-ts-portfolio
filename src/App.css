@@ -1,0 +1,9 @@
+
+#root {
+    background-color: cornflowerblue;
+}
+
+.show-box {
+    border-style: solid;
+    border-color: black;
+}

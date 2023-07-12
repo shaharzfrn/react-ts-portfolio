@@ -1,7 +1,3 @@
-import { useEffect } from 'react';
-import { Col, Container, Row, Navbar } from 'react-bootstrap';
-import Welcome from './components/Welcome';
-
 import './App.css';
 
 function App() {

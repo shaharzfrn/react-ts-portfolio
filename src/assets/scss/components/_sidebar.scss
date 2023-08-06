@@ -1,0 +1,104 @@
+.sidebar {
+    border-top: $border-style $border-width $border-color;
+
+    min-width: 0;
+    width: 100%;
+
+    margin: $section-padding 0 0 0;
+    padding: $section-padding 0 0 0;
+
+    > * {
+        border-top: $border-style $border-width $border-color;
+        margin: $section-padding 0 0 0;
+        padding: $section-padding 0 0 0;
+    }
+
+    > :first-child {
+        border-top: 0;
+        margin-top: 0;
+        padding-top: 0;
+    }
+
+    @include lg {
+        margin: 0;
+        padding: 0;
+
+        border-top: 0;
+        margin-right: $section-padding;
+        min-width: 22em;
+        width: 22em;
+    }
+
+    .intro {
+        text-align: center;
+        margin: 0 0 $section-padding-sm 0;
+        padding: 1.25em 0;
+
+        > :last-child {
+            margin-bottom: 0;
+        }
+
+        .logo {
+            border-bottom: 0;
+            display: inline-block;
+            margin: 0 0 ($element-margin * 0.5) 0;
+            overflow: hidden;
+            position: relative;
+
+            img {
+                width: 10em;
+                border-radius: 50%;
+                display: block;
+            }
+        }
+
+        .container {
+            .h2 {
+                font-size: 1.25em;
+                font-weight: $header-font-weight-bold;
+            }
+
+            p {
+                font-size: 0.8em;
+
+                .link {
+                    color: $body-color-fg;
+                }
+            }
+
+            > :last-child {
+                margin-bottom: 0;
+            }
+        }
+
+        @include md {
+            margin: 0 0 $section-padding 0;
+            .container {
+                .h2 {
+                    font-size: 2em;
+                }
+
+                p {
+                    font-size: 0.7em;
+                }
+            }
+        }
+
+        @include lg {
+            text-align: start;
+        }
+    }
+
+    .blurb {
+    }
+
+    .copyright {
+        color: $body-color-fg-light;
+        font-family: $header-font-family;
+        font-size: 0.5em;
+        font-weight: $header-font-weight;
+        letter-spacing: $header-kerning;
+        text-transform: uppercase;
+        margin-top: 1em;
+    }
+}

@@ -1,0 +1,72 @@
+.post {
+
+    position: relative;
+    left: $section-padding * -1;
+
+    width: calc(100% + (#{$section-padding} * 2));
+
+    border-left: 0;
+    border-right: 0;
+    border: $border-style $border-width $border-color;
+    
+    background: $post-color-bg;
+
+    > header {
+        
+        @include padding($section-padding * 1.25, $section-padding, (0, 0, -0.5em, 0));
+        flex-direction: column;
+        border-left: 0;
+
+        .title {
+            flex: 0 1 auto;
+            margin: 0 0 $element-margin 0;
+            padding: 0;
+            text-align: center;
+        }
+
+    }
+
+    @include md {
+        margin: 0 0 $section-padding 0;
+		position: relative;
+
+        > header {
+            display: flex;
+            border-bottom: $border-style $border-width $border-color;
+            left: ($section-padding * -1);
+			margin: ($section-padding * -1) 0 $section-padding 0;
+			position: relative;
+			width: calc(100% + #{$section-padding * 2});
+
+            .title {
+                flex-grow: 1;
+                flex: 1;
+                padding: ($section-padding * 1.25) $section-padding ($section-padding * 1.1) $section-padding;
+
+            }
+        }
+    }
+}
+
+
+
+.test {
+    background: green;
+    
+    @media screen and (max-width: $breakpoint-lg) {
+        
+        
+    }
+
+    @media screen and (min-width: $breakpoint-lg) {
+        
+    }
+
+    @include breakpoint-max(lg) {
+        border: $border-style 3px red;;
+    }
+
+    @include breakpoint-min(lg) {
+        border-top: $border-style 3px red;
+    }
+}

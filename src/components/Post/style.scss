@@ -1,0 +1,89 @@
+.post {
+    @include padding($section-padding, $section-padding);
+
+    margin: 0 0 $section-padding 0;
+    position: relative;
+
+    border: $border-style $border-width $border-color;
+    background: $post-color-bg;
+
+    > header {
+        display: flex;
+        
+        position: relative;
+
+        width: calc(100% + #{$section-padding * 2});
+        left: ($section-padding * -1);
+        
+        margin: ($section-padding * -1) 0 $section-padding 0;
+        
+        border-bottom: $border-style $border-width $border-color;
+
+        .title {
+            flex-grow: 1;
+            flex: 1;
+            padding: ($section-padding * 1.25) $section-padding ($section-padding * 1.1) $section-padding;
+
+            .h2 {
+                font-weight: $header-font-weight-bold;
+                font-size: 1.5em;
+            }
+
+            > :last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    @include breakpoint-max(sm) {
+        
+        left: $section-padding-sm * -1;
+        margin: 0 0 $element-margin 0;
+        width: calc(100% + (#{$section-padding-sm} * 2));
+
+        @include padding($section-padding-sm, $section-padding-sm);
+
+        header {
+
+            width: calc(100% + (#{$section-padding-sm} * 2));
+            left: $section-padding-sm * -1;
+            
+            margin: ($section-padding-sm * -1) 0 $section-padding-sm 0;
+            @include padding($section-padding-sm, $section-padding-sm, (0, 0, -0.5em, 0)) ;
+            border-left: 0;
+
+            .title {
+                .h2 {
+                    font-size: 1.1em;
+                }
+            }
+        }
+    }
+
+    @include breakpoint-max(md) {
+        
+        left: $section-padding * -1;
+        width: calc(100% + (#{$section-padding} * 2));
+
+        border-left: 0;
+        border-right: 0;
+        > header {
+            flex-direction: column;
+            
+            @include padding($section-padding, $section-padding);
+
+            border-left: 0;
+
+            .title {
+                flex: 0 1 auto;
+                margin: 0 0 $element-margin 0;
+                padding: 0;
+                text-align: center;
+            }
+        }
+    }
+
+    @include breakpoint-min(md) {
+
+    }
+}

@@ -1,0 +1,25 @@
+@import "./variables";
+@import "./mixins";
+
+@import './animations';
+
+@import "./typography";
+
+
+@import '../../layouts/PageLayout/style.scss';
+
+@import '../../components/NavBar/style.scss';
+@import '../../components/SideBar/style.scss';
+
+@import '../../components/ContactIcons/style.scss';
+
+@import '../../components/PageHeader/style.scss';
+@import '../../components/Post/style.scss';
+
+
+// @import './components/contac_icons';
+
+// @import './components/navbar';
+// @import './components/sidebar';
+
+// @import './components/post';

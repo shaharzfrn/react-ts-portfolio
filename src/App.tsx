@@ -1,6 +1,12 @@
 import { useEffect, useState, ReactElement, Suspense } from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
+import PageLayout from './layouts/PageLayout';
+
+import Home from './pages/Home';
+
+import About from './pages/About';
+
 import './assets/scss/main.scss';
 
 function IdentityFormat(
@@ -56,7 +62,10 @@ function App() {
   return (
     <BrowserRouter>
       <Suspense fallback={<PageLayout title="" description="" />} />
-      <Routes />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+      </Routes>
     </BrowserRouter>
   );
 }

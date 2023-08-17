@@ -1,0 +1,70 @@
+.degree-container {
+	.h4 {
+		font-weight: normal;
+	}
+
+	.degree {
+		margin-bottom: 0.1em;
+		text-transform: none;
+		letter-spacing: 0.16em;
+		font-size: 0.8em;
+	}
+
+	.school {
+		text-transform: none;
+		padding-top: 0.3em;
+		margin-bottom: 1em;
+	}
+}
+
+.job-container {
+}
+
+.skill-container {
+	.skillbar {
+		position: relative;
+		display: flex;
+		flex-direction: row;
+		margin-bottom: 15px;
+		width: 100%;
+		background: #eee;
+		height: 25px;
+		border-radius: 3px;
+
+		.skillbar-title {
+			position: absolute;
+			top: 0;
+			left: 0;
+			height: 25px;
+			color: $body-color-fg;
+			border-top-left-radius: 6px;
+			border-bottom-left-radius: 6px;
+		}
+		.skillbar-title span {
+			padding: 0 20px;
+			height: 25px;
+			line-height: 25px;
+			border-top-left-radius: 6px;
+			border-bottom-left-radius: 6px;
+		}
+
+		.skillbar-bar {
+			height: 25px;
+			width: 0px;
+			background: #6adcfa;
+			border-radius: 6px;
+		}
+
+		.skillbar-percent {
+			position: absolute;
+			right: 10px;
+			top: 0;
+			font-size: 11px;
+			line-height: 25px;
+			
+		}
+	}
+}
+
+.courses-container {
+}

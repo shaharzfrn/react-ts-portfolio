@@ -22,7 +22,7 @@ $border-color-bg: rgba(160, 160, 160, 0.075);
 $border-color-alt: rgba(160, 160, 160, 0.65);
 $accent-color: #2e59ba;
 
-$body-font-family: $font-sans-serif;
+$body-font-family: ('Source Sans Pro', Helvetica, sans-serif);
 $body-font-size: 1rem;
 $body-font-weight: 400;
 $body-line-height: 1.5;
@@ -39,12 +39,12 @@ $header-kerning: 0.25em;
 $header-color-bg: #ffffff;
 $header-color-fg: #646464;
 
-
 $post-color-bg: #ffffff;
 
 $section-padding: 3em;
-$section-padding-sm: 2.5em;
+$section-padding-sm: 1.5em;
 
+$element-height: 2.75em;
 $element-margin: 2em;
 
 

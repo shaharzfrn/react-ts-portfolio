@@ -1,10 +1,8 @@
 import { faGithub } from '@fortawesome/free-brands-svg-icons/faGithub';
-import { faFacebookF } from '@fortawesome/free-brands-svg-icons/faFacebookF';
 import { faInstagram } from '@fortawesome/free-brands-svg-icons/faInstagram';
 import { faLinkedinIn } from '@fortawesome/free-brands-svg-icons/faLinkedinIn';
-import { faAngellist } from '@fortawesome/free-brands-svg-icons/faAngellist';
-import { faTwitter } from '@fortawesome/free-brands-svg-icons/faTwitter';
-import { faEnvelope } from '@fortawesome/free-regular-svg-icons/faEnvelope';
+import { faDiscord } from '@fortawesome/free-brands-svg-icons/faDiscord';
+import { faStackOverflow } from '@fortawesome/free-brands-svg-icons/faStackOverflow';
 
 const data = [
   {
@@ -18,10 +16,21 @@ const data = [
     icon: faLinkedinIn,
   },
   {
+    link: 'https://discordapp.com/users/388394976473513986',
+    label: 'Discord',
+    icon: faDiscord,
+  },
+  {
+    link: 'https://stackoverflow.com/users/6199186/shaharzfrn',
+    label: 'Stackoverflow',
+    icon: faStackOverflow,
+  },
+  {
     link: 'https://www.instagram.com/shaharzfrn/',
     label: 'Instagram',
     icon: faInstagram,
   },
+  //
 ];
 
 export default data;

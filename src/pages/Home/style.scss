@@ -1,0 +1,37 @@
+// .page-header {
+//     @include padding($section-padding, $section-padding, (0, 0, 2, 0));
+//     display: flex;
+//     position: relative;
+
+//     border-bottom: $border-style $border-width $border-color;
+
+//     &:only-child {
+//         border-bottom: 0;
+//         // margin: ($section-padding * -1) 0 ($section-padding * -1) 0;
+//     }
+
+//     .title {
+//         flex-grow: 1;
+//         flex: 1;
+//         padding: ($section-padding * 1.25) $section-padding ($section-padding * 1.1) $section-padding;
+
+//         h2 {
+//             font-weight: $header-font-weight-bold;
+//             font-size: 2em;
+
+//             a,
+//             .link {
+//                 border-bottom: 0;
+//             }
+//         }
+//     }
+// }
+
+// .post {
+//     @include padding($section-padding, $section-padding, (0, 0, 2, 0));
+//     margin: $section-padding;
+//     display: flex;
+//     position: relative;
+
+//     border: $border-style $border-width $border-color;
+// }

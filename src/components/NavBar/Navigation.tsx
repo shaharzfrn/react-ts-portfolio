@@ -1,19 +1,22 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
 import { Link } from 'react-router-dom';
 
-import Toggler from './Toggler';
-
 import routes from '../../assets/data/routes';
+
+const OPEN_HAMBURGER = <>&#9776;</>;
+const CLOSE_HAMBURGER = <>&#10005;</>;
 
 function Navigation() {
   const [isOpen, setOpen] = useState<boolean | null>(null);
   const [navStatus, setStatus] = useState('');
 
-  useEffect(() => {
-    if (isOpen === null) return;
-    setStatus(isOpen ? 'menu-open' : 'menu-close');
-  }, [isOpen]);
+  const handleClick = () => {
+    setOpen((prevState) => {
+      setStatus(prevState ? 'menu-close' : 'menu-open');
+      return !prevState;
+    });
+  };
 
   return (
     <>
@@ -30,7 +33,14 @@ function Navigation() {
             ))}
         </ul>
       </nav>
-      <Toggler isOpen={isOpen} setOpen={setOpen} />
+      <div
+        role="presentation"
+        className={`navbar-toggler ${navStatus}`}
+        onClick={handleClick}
+        onKeyDown={handleClick}
+      >
+        {isOpen ? CLOSE_HAMBURGER : OPEN_HAMBURGER}
+      </div>
     </>
   );
 }

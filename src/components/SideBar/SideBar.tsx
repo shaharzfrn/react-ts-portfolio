@@ -3,7 +3,7 @@ import ContactIcons from '../ContactIcons/ContactIcons';
 
 // import './style.scss';
 
-const PUBLIC_URL = '';
+const PUBLIC_URL = 'https://shaharzfrn.github.io';
 
 function SideBar() {
   return (
@@ -12,7 +12,7 @@ function SideBar() {
         <Link to="/" className="logo">
           <img src={`${PUBLIC_URL}/images/me.jpg`} alt="" />
         </Link>
-        <header className="header">
+        <header>
           <h2 className="h2">Shahar Zafran</h2>
           <p className="contact">
             <a href="mailto:shaharzfrn@gmail.com" className="link">

@@ -1,9 +1,10 @@
 .page-header {
-    margin: ($section-padding * -1) 0 $section-padding 0;
+    // margin: ($section-padding * -1) 0 0 $section-padding;
+    margin: ($section-padding * -1) 0 0 0;
     position: relative;
     
-
     > header {
+        background-color: blue;;
         display: flex;
         
         position: relative;
@@ -19,6 +20,10 @@
             h2 {    
                 font-weight: $header-font-weight-bold;
                 font-size: 2em;
+
+                a, .link {
+                    border-bottom: 0;
+                }
             }
         }
     }
@@ -69,9 +74,5 @@
                 text-align: center;
             }
         }
-    }
-
-    @include breakpoint-min(md) {
-
     }
 }

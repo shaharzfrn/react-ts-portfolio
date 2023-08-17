@@ -131,7 +131,6 @@ body {
 }
 
 
-
 body {
     color: $header-color-fg;
     font-family: $body-font-family;;
@@ -165,11 +164,12 @@ a, .link {
 
 p {
     margin: 0 0 $element-margin 0;
+    font-family: $body-font-family;
 }
 
 h1,
-.h1, h2, .h2 {
-//   color: #3c3b3b;
+.h1, h2, .h2, h3, .h3, h4, .h4 {
+  color: #3c3b3b;
   font-family: $header-font-family;
   font-weight: $header-font-weight-bold;
   letter-spacing: $header-kerning;
@@ -186,6 +186,22 @@ h2, .h2 {
     font-size: 1.1em;
 }
 
+h3, .h3 {
+    font-size: 0.9em;
+}
+
+h4, .h4 {
+    font-size: 0.7em;
+}
+
+h5, .h5 {
+    font-size: 0.7em;
+}
+
+h6, .h6 {
+    font-size: 0.7em;
+}
+
 
 
 header {
@@ -198,4 +214,35 @@ header {
         margin-top: -1em;
         text-transform: uppercase;
     }
+}
+
+
+
+.content-list {
+    list-style: disc;
+}
+
+.resume-menu {
+    list-style-type: disc;
+    & li:after { content: " \00b7"; }
+    li {
+        display: inline-block;
+        &:after {
+            margin: 0.5em;
+            content: " \2022";
+        }
+        &:last-child:after { content: none; }
+    }
+}
+
+.align-left {
+    text-align: left;
+}
+
+.align-center {
+    text-align: center;
+}
+
+.align-right {
+    text-align: right;
 }

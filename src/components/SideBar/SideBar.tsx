@@ -3,7 +3,7 @@ import ContactIcons from '../ContactIcons/ContactIcons';
 
 // import './style.scss';
 
-const PUBLIC_URL = 'https://shaharzfrn.github.io/react-ts-portfolio/';
+const PUBLIC_URL = '';
 
 function SideBar() {
   return (

@@ -2,7 +2,6 @@
   "name": "react-ts-portfolio",
   "private": true,
   "version": "0.0.0",
-  "homepage": "https://shaharzfrn.github.io/react-ts-portfolio/",
   "type": "module",
   "scripts": {
     "dev": "vite",

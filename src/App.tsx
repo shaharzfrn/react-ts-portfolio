@@ -1,5 +1,5 @@
 import { useEffect, useState, ReactElement, Suspense } from 'react';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { HashRouter, Route, Routes } from 'react-router-dom';
 
 import PageLayout from './layouts/Page';
 
@@ -63,7 +63,7 @@ TableRow.defaultProps = {
 
 function App() {
   return (
-    <BrowserRouter>
+    <HashRouter basename="/">
       <Suspense fallback={<PageLayout title="" description="" />} />
       <Routes>
         <Route path="/" element={<Home />} />
@@ -72,7 +72,7 @@ function App() {
         <Route path="/projects" element={<Projects />} />
         <Route path="/contact" element={<Contact />} />
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 

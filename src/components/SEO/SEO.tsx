@@ -21,7 +21,10 @@ function SEO({ title, description }: SEOProps) {
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
       <meta property="og:locale" content="en_US" />
-      {/* <meta property="og:image" content="/images/meta-seo-img.jpg" /> */}
+      <meta
+        property="og:image"
+        content="/images/meta-seo-img-nubelson-fernandes.jpg"
+      />
     </Helmet>
   );
 }

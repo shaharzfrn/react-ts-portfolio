@@ -1,3 +1,12 @@
+
+.resume-menu {
+    li {
+        display: inline-block;
+		margin: 0.5em;
+		text-transform: uppercase;	
+    }
+}
+
 .degree-container {
 	.h4 {
 		font-weight: normal;
@@ -18,9 +27,29 @@
 }
 
 .job-container {
+	margin-bottom: $element-margin;
+
+	.daterange {
+		font-size: .7em;
+	}
+
+	.job-summary {
+		font-size: 0.9em;
+	}
+
+	.job-highlights {
+		padding-left: 1em;
+		list-style-type: disc;
+		font-size: 0.9em;
+	}
+
 }
 
 .skill-container {
+	.skill-filter {
+		font-size: 1em;
+		margin: $element-margin * 0.1;
+	}
 	.skillbar {
 		position: relative;
 		display: flex;
@@ -61,10 +90,31 @@
 			top: 0;
 			font-size: 11px;
 			line-height: 25px;
-			
 		}
 	}
 }
 
 .courses-container {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+
+	.course {
+
+		list-style: disc;
+
+		.course-title {
+			display: inline;
+		}
+		.course-name {
+			display: inline;
+			font-family: "Raleway", Helvetica, sans-serif;
+			font-size: 0.7em;
+			font-weight: 400;
+			letter-spacing: 0.25em;
+			line-height: 2.5;
+			margin-top: -1em;
+			text-transform: uppercase;
+		}
+	}
 }

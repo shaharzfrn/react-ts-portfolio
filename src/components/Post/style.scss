@@ -146,7 +146,9 @@
     .post-section-split {
         margin-left: $element-margin;
         margin-right: $element-margin;
+        margin-top: $element-margin;
         border-top: dashed $border-width $border-color;
+        
     }
 
     .post-section::before {
@@ -159,8 +161,13 @@
     }
 
     @include breakpoint-max(md) {
-        border-left: 0;
+        position: relative;
+
+        left: $section-padding * -1;
+        width: calc(100% + (#{$section-padding} * 2));
+
         border-right: 0;
+        border-left: 0;
 
         .post-header,
         .post-section-header {
@@ -181,11 +188,11 @@
     }
 
     @include breakpoint-max(sm) {
-        margin: 0 0 $element-margin 0;
-        padding: 0;
 
-        // padding: ($section-padding-sm * 0.5) 0 ($section-padding-sm * 0.5) 0;
-        // padding: $section-padding-sm * 0.5;
+        left: $section-padding-sm * -1;
+        width: calc(100% + (#{$section-padding-sm} * 2));
+
+        margin: 0 0 $element-margin 0;
         @include padding($section-padding-sm, $section-padding-sm);
 
         border-left: 0;

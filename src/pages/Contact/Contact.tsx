@@ -3,13 +3,15 @@ import { Link } from 'react-router-dom';
 import Page from '../../layouts/Page';
 import Post from '../../components/Post/Post';
 
-// import PageHeader from '../../components/PageHeader/PageHeader';
 import EmailLink from '../../components/EmailLink/EmailLink';
 import ContactIcons from '../../components/ContactIcons';
 
-export default function Contact() {
+function Contact() {
   return (
-    <Page title="" description="">
+    <Page
+      title="Contact"
+      description="Contact Shahar Zafran via email @ shaharzfrn@gmail.com"
+    >
       <Page.Header>
         <h2 className="h2">
           <Link to="/contact" className="link">
@@ -20,9 +22,8 @@ export default function Contact() {
       </Page.Header>
       <Post>
         <Post.Header>
-          <h2>Feel free to get in touch.</h2>
           <p>
-            You can email me at:
+            Feel free to get in touch. You can email me at:
             <EmailLink />
           </p>
           <ContactIcons />
@@ -31,3 +32,5 @@ export default function Contact() {
     </Page>
   );
 }
+
+export default Contact;

@@ -9,7 +9,10 @@ import Courses from './Courses';
 
 function Resume() {
   return (
-    <Page title="" description="">
+    <Page
+      title="Resume"
+      description="Shahar Zafran Resume. Technion, Israel, Freelancer"
+    >
       <Page.Header>
         <h2 className="h2">
           <Link to="/resume" className="link">
@@ -21,8 +24,17 @@ function Resume() {
             <li>
               <a href="#education">education</a>
             </li>
+            <li>&#8226;</li>
+            <li>
+              <a href="#experience">experience</a>
+            </li>
+            <li>&#8226;</li>
             <li>
               <a href="#skills">skills</a>
+            </li>
+            <li>&#8226;</li>
+            <li>
+              <a href="#courses">courses</a>
             </li>
           </ul>
         </div>

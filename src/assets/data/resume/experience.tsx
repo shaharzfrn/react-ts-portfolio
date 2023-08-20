@@ -1,25 +1,39 @@
 const data = [
   {
-    name: 'Job 1',
-    position: 'Freelancer',
+    name: 'Freelancer',
+    position: 'Full-Stack Developer',
     url: '',
-    startDate: '2022-01-01',
+    startDate: '2019-06-01',
     summary: (
       <>
-        Work as freelancer, manly on{' '}
-        <a href="https://www.fiverr.com/shaharzfrn">Fiverr</a>
+        Full-Stack Developer freelancer. write softwares from scratch, continued
+        work on exists code and fixing bugs.
       </>
     ),
     highlights: [
       <>
-        <a href="https://google.com" target="_blank" rel="noreferrer">
-          Test Link
-        </a>{' '}
-        fun work
+        Work mainly on <a href="https://www.fiverr.com/shaharzfrn">Fiverr</a>{' '}
+        with client all over the world.
       </>,
-      'learn alot',
+      <>Most of my programming works was in Python and Java.</>,
+      <>All of my IT work was on Linux (mainly servers).</>,
+      <>
+        Work on small project in{' '}
+        <a href="https://www.walkme.com" target="_blank" rel="noreferrer">
+          walkme
+        </a>
+      </>,
     ],
   },
+  // {
+  //   name: 'IDF',
+  //   position: 'IT specialist',
+  //   url: '',
+  //   startDate: '2016-08-01',
+  //   endDate: '2018-08-01',
+  //   summary: <>IDF IT specialist</>,
+  //   highlights: [],
+  // },
 ];
 
 export default data;

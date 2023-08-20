@@ -1,13 +1,13 @@
 import { useEffect, useState, ReactElement, Suspense } from 'react';
-import { HashRouter, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 import PageLayout from './layouts/Page';
 
 import Home from './pages/Home/Home';
-
 import About from './pages/About/About';
 import Projects from './pages/Projects/Projects';
 import Resume from './pages/Resume/Resume';
+import NotFound from './pages/NotFound/NotFound';
 
 import './assets/scss/main.scss';
 import Contact from './pages/Contact/Contact';
@@ -63,7 +63,9 @@ TableRow.defaultProps = {
 
 function App() {
   return (
-    <HashRouter basename="/">
+    <BrowserRouter
+      basename={import.meta.env.DEV ? '/' : import.meta.env.BASE_URL}
+    >
       <Suspense fallback={<PageLayout title="" description="" />} />
       <Routes>
         <Route path="/" element={<Home />} />
@@ -71,8 +73,9 @@ function App() {
         <Route path="/resume" element={<Resume />} />
         <Route path="/projects" element={<Projects />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
-    </HashRouter>
+    </BrowserRouter>
   );
 }
 

@@ -1,6 +1,6 @@
 import Post from '../../components/Post/Post';
 
-import degrees from '../../assets/data/resume/degrees';
+import education from '../../assets/data/resume/education';
 
 interface DagreeProps {
   school: string;
@@ -24,7 +24,7 @@ function Degree({ school, degree, link, year }: DagreeProps) {
 
 function Education() {
   return (
-    <Post.Section divider="down">
+    <Post.Section divider="down" id="education">
       <Post.SectionHeader position="center">
         <h3 className="h3">
           <a href="#education" className="link">
@@ -33,7 +33,7 @@ function Education() {
         </h3>
       </Post.SectionHeader>
       <Post.Body>
-        {degrees.map((item) => {
+        {education.map((item) => {
           const { school, degree, link, year } = item;
           return (
             <Degree

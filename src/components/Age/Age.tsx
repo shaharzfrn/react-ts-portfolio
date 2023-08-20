@@ -10,8 +10,8 @@ function Age() {
     const currentAge = (Date.now() - birthTime.getTime()) / divisor;
     setAge(currentAge.toFixed(11));
   });
-
-  return <div className="age"> {age} </div>;
+  // <div className='age'>{age}</div>
+  return age;
 }
 
 export default Age;

@@ -1,11 +1,24 @@
-import { Link } from 'react-router-dom';
+import { Link, useLocation as useRouterLocation } from 'react-router-dom';
+import { useEffect, useState } from 'react';
 import ContactIcons from '../ContactIcons/ContactIcons';
 
 // import './style.scss';
 
 const PUBLIC_URL = '';
 
+function useLocation() {
+  const [location, setLocation] = useState<string>('');
+  const routerLocation = useRouterLocation();
+  useEffect(() => {
+    setLocation(routerLocation.pathname);
+  }, [routerLocation]);
+
+  return { location };
+}
+
 function SideBar() {
+  const { location } = useLocation();
+
   return (
     <section className="sidebar">
       <section className="intro">
@@ -25,16 +38,18 @@ function SideBar() {
       <section className="blurb">
         <h2 className="h2">About Me</h2>
         <p>
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Atque veniam
-          maxime nesciunt commodi optio excepturi nemo, ratione veritatis
-          nostrum repellendus error consequuntur dolorum. Veritatis voluptatum
-          ratione, nisi libero cumque sit voluptate repellendus assumenda ex
-          numquam temporibus quaerat quo ut odio deleniti. Ad at nobis ex illum
-          obcaecati repudiandae tempora autem debitis amet quos deleniti
-          accusamus odio fuga velit saepe sequi facere reprehenderit, id
-          possimus sed cum itaque corporis inventore. Suscipit tenetur dolorem
-          possimus tempore sint eos non optio iure laborum!
+          Hi 👋, I&apos;m Shahar. I&apos;m am a{' '}
+          <a href="https://www.technion.ac.il/en/home-2/">Technion</a> graduate.
         </p>
+        {location === '/resume' ? (
+          <Link to="/about" className="sidebar-button">
+            About Me!
+          </Link>
+        ) : (
+          <Link to="/resume" className="sidebar-button">
+            Learn More!
+          </Link>
+        )}
       </section>
 
       <section className="footer">

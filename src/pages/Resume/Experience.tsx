@@ -1,4 +1,4 @@
-import { ReactElement } from 'react';
+import { PropsWithChildren, ReactElement } from 'react';
 import Post from '../../components/Post/Post';
 
 import { formatDateString } from '../../utils/formatDate';
@@ -11,23 +11,18 @@ interface JobProps {
   url: string;
   startDate: string;
   summary: ReactElement;
-  highlights: string[];
-  endDate: string | undefined;
+  highlights: ReactElement[];
+  endDate?: string | undefined;
 }
-function Job({
-  name,
-  position,
-  url,
-  startDate,
-  endDate,
-  summary,
-  highlights,
-}: JobProps) {
+
+function Job({ data }: PropsWithChildren<{ data: JobProps }>) {
+  const { name, position, url, startDate, endDate, summary, highlights } = data;
   return (
-    <article className="jobs-container">
+    <article className="job-container">
       <header>
         <h4>
-          <a href={url}>{name}</a> - {position}
+          {url.length === 0 ? name : <a href={url}>{name}</a>}
+          {position.length !== 0 ? ` - ${position}` : ''}
         </h4>
         <p className="daterange">
           {' '}
@@ -35,10 +30,10 @@ function Job({
           {(endDate && formatDateString(endDate)) || 'PRESENT'}
         </p>
       </header>
-      {summary}
-      <ul>
+      <div className="job-summary">{summary && summary}</div>
+      <ul className="job-highlights">
         {highlights.map((highlight) => {
-          return <li key={highlight}>{highlight}</li>;
+          return <li key={Math.random()}>{highlight}</li>;
         })}
       </ul>
     </article>
@@ -47,7 +42,7 @@ function Job({
 
 function Experience() {
   return (
-    <Post.Section divider="down">
+    <Post.Section divider="down" id="experience">
       <Post.SectionHeader position="center">
         <h3 className="h3">
           <a href="#experience" className="link">
@@ -57,28 +52,7 @@ function Experience() {
       </Post.SectionHeader>
       <Post.Body>
         {jobs.map((job) => {
-          const {
-            name,
-            position,
-            url,
-            startDate,
-            endDate,
-            summary,
-            highlights,
-          } = job as JobProps;
-
-          return (
-            <Job
-              key={name}
-              name={name}
-              position={position}
-              url={url}
-              startDate={startDate}
-              endDate={endDate}
-              summary={summary}
-              highlights={highlights}
-            />
-          );
+          return <Job key={job.name} data={job} />;
         })}
       </Post.Body>
     </Post.Section>

@@ -23,7 +23,7 @@ function Navigation() {
       <nav className={`navbar-nav ${navStatus}`}>
         <ul className="navbar-items">
           {routes
-            .filter((link) => !link.index)
+            .filter((link) => !link.index && !link.disable)
             .map((link) => (
               <li key={link.label} className="navbar-item">
                 <Link to={link.path} className="link navbar-link">

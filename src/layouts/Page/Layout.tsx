@@ -1,5 +1,7 @@
 import { PropsWithChildren } from 'react';
-import { Helmet, HelmetProvider } from 'react-helmet-async';
+import { HelmetProvider } from 'react-helmet-async';
+
+import SEO from '../../components/SEO/SEO';
 
 import NavBar from '../../components/NavBar';
 import SideBar from '../../components/SideBar';
@@ -11,15 +13,17 @@ export interface PageProps {
 
 function Page({ title, description, children }: PropsWithChildren<PageProps>) {
   return (
+    // https://www.freecodecamp.org/news/react-helmet-examples/
     <HelmetProvider>
-      <Helmet
+      <SEO title={title} description={description} />
+      {/* <Helmet
         titleTemplate="%s | shaharzfrn"
         defaultTitle="shaharzfrn"
         defer={false}
       >
         {title && <title>{title}</title>}
         <meta name="description" content={description} />
-      </Helmet>
+      </Helmet> */}
       <div className="page-wrapper">
         <NavBar />
 

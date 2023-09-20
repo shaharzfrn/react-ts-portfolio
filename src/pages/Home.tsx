@@ -11,32 +11,21 @@ export default function Home() {
       </Page.Title>
       <Page.Body>
         <Section>
-          <Section.Header>
-            <h1 className="text-uppercase fw-bold clr-neutral-900 fs-400 padding-block-end-2 ">
-              <a href="#/">New Section 1</a>
-            </h1>
-          </Section.Header>
-
+          <p>Welcome to my website.</p>
           <p>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Provident
-            ipsum, ut delectus a, obcaecati amet soluta vel optio cupiditate
-            perferendis dolorem dicta reprehenderit, quisquam deleniti quam
-            nulla harum voluptas iusto!
+            Please feel free to read more <Link to="/about">about me</Link>, you
+            can check out my <Link to="/resume">resume</Link> or contact me.
           </p>
-        </Section>
-
-        <Section>
-          <h1 className="text-uppercase fw-bold clr-neutral-900 fs-400 padding-block-end-2">
-            <a href="#/">New Section 2</a>
-          </h1>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil
-            reiciendis accusantium veniam non, earum dolor excepturi consequatur
-            magnam suscipit itaque neque rerum officia sequi labore? Consequatur
-            est non et assumenda quidem harum id reprehenderit quibusdam
-            delectus similique. Consequuntur, iste officia fugiat laudantium
-            molestiae accusantium ratione quibusdam aliquid quod omnis!
-            Voluptatibus!
+          <p className="padding-block-start-4">
+            Source available{' '}
+            <a
+              target="_blank"
+              href="https://github.com/shaharzfrn/react-ts-portfolio"
+              rel="noreferrer"
+            >
+              here
+            </a>
+            .
           </p>
         </Section>
       </Page.Body>

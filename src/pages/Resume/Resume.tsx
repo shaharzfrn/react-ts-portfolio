@@ -1,50 +1,41 @@
 import { Link } from 'react-router-dom';
-
 import Page from '../../layouts/Page';
-import Post from '../../components/Post/Post';
+// import Section from '../../components/Section/Section';
 import Education from './Education';
 import Experience from './Experience';
 import Skills from './Skills';
 import Courses from './Courses';
+import Extra from './Extra';
+
+const SECTIONS = ['education', 'experience', 'skills', 'courses', 'extra'];
 
 function Resume() {
   return (
-    <Page
-      title="Resume"
-      description="Shahar Zafran Resume. Technion, Israel, Freelancer"
-    >
-      <Page.Header>
-        <h2 className="h2">
-          <Link to="/resume" className="link">
-            Resume
-          </Link>
-        </h2>
-        <div>
-          <ul className="resume-menu">
-            <li>
-              <a href="#education">education</a>
-            </li>
-            <li>&#8226;</li>
-            <li>
-              <a href="#experience">experience</a>
-            </li>
-            <li>&#8226;</li>
-            <li>
-              <a href="#skills">skills</a>
-            </li>
-            <li>&#8226;</li>
-            <li>
-              <a href="#courses">courses</a>
-            </li>
-          </ul>
+    <Page title="Resume" description="Resume">
+      <Page.Title>
+        <Link to="/resume">resume</Link>
+        <ul className="bullet-list | flex-group | fs-400 ">
+          {SECTIONS.map((section) => {
+            return (
+              <li key={section}>
+                <a href={`#${section}`} className="border-bottom-0">
+                  {section}
+                </a>
+              </li>
+            );
+          })}
+        </ul>
+      </Page.Title>
+      <Page.Body>
+        <div className="flow">
+          <Education />
+          <Experience />
+          <Skills />
+          <Courses />
+          <Extra />
         </div>
-      </Page.Header>
-      <Post>
-        <Education />
-        <Experience />
-        <Skills />
-        <Courses />
-      </Post>
+      </Page.Body>
+      <slot />
     </Page>
   );
 }

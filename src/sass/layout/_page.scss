@@ -1,0 +1,59 @@
+@use "../abstracts" as *;
+
+.page {
+    --border-inline: solid 1px #{$color-neutral-200};
+    --border-block: solid 1px #{$color-neutral-200};
+    --border-bottom: solid 1px #{$color-neutral-200};
+
+    &-container {
+        --grid-gap: #{$size-10};
+        --flow-spacer: #{$size-10};
+
+        @each $size, $template in $page-template-areas {
+            @if $size == default {
+                @each $prop, $value in $template {
+                    --grid-template-#{$prop}: #{$value};
+                }
+            }
+        }
+    }
+
+    &-section-title {
+        .heading-1,
+        .heading-2,
+        .heading-3 {
+            a {
+                border-bottom: none;
+            }
+        }
+    }
+
+    &-section {
+        &::before {
+            display: block;
+            content: " ";
+            margin-top: -$navbar-height;
+            height: $navbar-height;
+            visibility: hidden;
+            pointer-events: none;
+        }
+    }
+
+    @each $area in $page-layout-areas {
+        &-#{$area} {
+            grid-area: $area;
+        }
+    }
+}
+
+@each $size, $template in $page-template-areas {
+    @if $size != default {
+        @include mq-min($size) {
+            .page-container {
+                @each $prop, $value in $template {
+                    --grid-template-#{$prop}: #{$value};
+                }
+            }
+        }
+    }
+}

@@ -1,9 +1,8 @@
-import { PropsWithChildren, ReactElement } from 'react';
-import Post from '../../components/Post/Post';
-
+import { ReactElement } from 'react';
 import { formatDateString } from '../../utils/formatDate';
 
 import jobs from '../../assets/data/resume/experience';
+import Section from '../../components/Section/Section';
 
 interface JobProps {
   name: string;
@@ -12,50 +11,69 @@ interface JobProps {
   startDate: string;
   summary: ReactElement;
   highlights: ReactElement[];
-  endDate?: string | undefined;
+  endDate: string | undefined;
 }
-
-function Job({ data }: PropsWithChildren<{ data: JobProps }>) {
-  const { name, position, url, startDate, endDate, summary, highlights } = data;
+function Job({
+  name,
+  position,
+  url,
+  startDate,
+  endDate,
+  summary,
+  highlights,
+}: JobProps) {
   return (
-    <article className="job-container">
-      <header>
-        <h4>
-          {url.length === 0 ? name : <a href={url}>{name}</a>}
-          {position.length !== 0 ? ` - ${position}` : ''}
-        </h4>
-        <p className="daterange">
+    <article className="">
+      <header className="padding-block-end-4 fs-400 text-uppercase">
+        <p className="clr-neutral-900 fw-semi-bold">
+          <a href={url}>{name}</a> - {position}
+        </p>
+        <p className="fs-100">
           {' '}
           {formatDateString(startDate)} -{' '}
-          {(endDate && formatDateString(endDate)) || 'PRESENT'}
+          {endDate ? formatDateString(endDate) : 'present'}
         </p>
       </header>
-      <div className="job-summary">{summary && summary}</div>
-      <ul className="job-highlights">
-        {highlights.map((highlight) => {
-          return <li key={Math.random()}>{highlight}</li>;
-        })}
-      </ul>
+
+      <div className="fs-200">
+        {summary}
+        <ul className="padding-inline-start-4">
+          {highlights.map((highlight) => {
+            return <li key={Math.random()}>{highlight}</li>;
+          })}
+        </ul>
+      </div>
     </article>
   );
 }
 
 function Experience() {
   return (
-    <Post.Section divider="down" id="experience">
-      <Post.SectionHeader position="center">
-        <h3 className="h3">
-          <a href="#experience" className="link">
+    <Section id="experience">
+      <Section.Header>
+        <h1 className="text-uppercase fw-bold clr-neutral-900 fs-500 text-center margin-block-end-4 tracking-wide">
+          <a href="#education" className="border-bottom-0 ">
             experience
           </a>
-        </h3>
-      </Post.SectionHeader>
-      <Post.Body>
-        {jobs.map((job) => {
-          return <Job key={job.name} data={job} />;
-        })}
-      </Post.Body>
-    </Post.Section>
+        </h1>
+      </Section.Header>
+      {jobs.map((job) => {
+        const { name, position, url, startDate, endDate, summary, highlights } =
+          job as JobProps;
+        return (
+          <Job
+            key={name}
+            name={name}
+            position={position}
+            url={url}
+            startDate={startDate}
+            endDate={endDate}
+            summary={summary}
+            highlights={highlights}
+          />
+        );
+      })}
+    </Section>
   );
 }
 

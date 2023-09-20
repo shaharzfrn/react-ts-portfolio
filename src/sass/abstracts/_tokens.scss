@@ -1,0 +1,223 @@
+@use "colors" as *;
+@use "typography" as *;
+@use "sizes" as *;
+
+$active-theme: $light;
+$enable-media-query-dark-mode: false;
+
+// Contextual
+$color-text-default: $color-neutral-700;
+$color-background-default: $color-primary-100;
+$color-text-interactive-default: $color-accent-400;
+$color-text-interactive-hover: $color-accent-600;
+
+// set to 0 to disable
+$letter-spacing-loose: 0;
+
+$border-type: (solid, dotted, dashed);
+$border-sizes: (0, 1, 2, 4, 8);
+$border-sides: (left, right, top, bottom, inline, block);
+$box-sides: (left, right, top, bottom, inline, block);
+
+
+$border-radius-1: $size-2;
+$border-radius-2: $size-4;
+
+$box-shadow-1:
+  0px 6px 5px rgb(0, 0, 0, 0.012),
+  0px 22px 18px rgb(0, 0, 0, 0.018),
+  0px 100px 80px rgb(0, 0, 0, 0.03);
+
+$box-shadow-2:
+  0px 6px 5px rgb(0, 0, 0, 0.016),
+  0px 22px 18px rgb(0, 0, 0, 0.024),
+  0px 100px 80px rgb(0, 0, 0, 0.04);
+
+$box-shadow-3:
+  0px 6px 5px rgb(0, 0, 0, 0.02),
+  0px 22px 18px rgb(0, 0, 0, 0.03),
+  0px 100px 80px rgb(0, 0, 0, 0.05);
+
+$box-shadow-4:
+  0px 6px 5px rgb(0, 0, 0, 0.03),
+  0px 22px 18px rgb(0, 0, 0, 0.042),
+  0px 100px 80px rgb(0, 0, 0, 0.07);
+
+$box-shadow-5:
+  0px 6px 5px rgb(0, 0, 0, 0.04),
+  0px 22px 18px rgb(0, 0, 0, 0.06),
+  0px 100px 80px rgb(0, 0, 0, 0.1);
+
+// body
+$body-font-family: $font-family-base;
+$body-font-size: $font-size-400;
+$body-line-height: 1.5;
+$body-font-weight: $font-weight-default;
+$body-text-color: $color-text-default;
+$body-background-color: $color-background-default;
+
+$link-color: $color-text-interactive-default;
+$link-color-hover: $color-text-interactive-hover;
+$link-decoration-style: none;
+$link-border-decoration: dotted 1px $color-neutral-600;
+
+$heading-font-family: $font-family-accent;
+$heading-color-default: $color-neutral-900;
+$heading-font-weight: $font-weight-bold;
+$heading-letter-spacing: $letter-spacing-loose;
+$heading-line-height: 1.1;
+$heading-text-transform: text-uppercase;
+
+$heading-1-font-size: $font-size-900;
+$heading-1-color: $heading-color-default;
+$heading-2-font-size: $font-size-800;
+$heading-2-color: $heading-color-default;
+$heading-3-font-size: $font-size-700;
+$heading-3-color: $heading-color-default;
+
+// layout
+$grid-gap: $size-6;
+$flex-group-gap: $size-4;
+
+$section-padding-block: clamp(5rem, 10vh, 6rem);
+
+$container-min-margin-inline: $size-4;
+$container-max-width: 64rem;
+$container-max-width-narrow: 40rem;
+$container-max-width-wide: 75rem;
+
+// navbar settings:
+// ############################################################################ //
+
+// colors
+$navbar-background-color: $color-primary-000;
+$navbar-color: $color-neutral-900;
+
+// spacing
+$navbar-padding-block: $size-4;
+$navbar-padding-inline: 0;
+$navbar-padding: $navbar-padding-block $navbar-padding-inline;
+$navbar-height: $size-10;
+$navbar-margin: 0;
+
+// aligment
+$navbar-z-index: 999;
+$navbar-jusitifcation-small-screens: space-between;
+$navbar-jusitifcation-large-screens: space-between;
+$navbar-alignment: center;
+
+// font
+$navbar-font-size: $font-size-400;
+$navbar-font-family: $heading-font-family;
+$navbar-font-weight: $heading-font-weight;
+
+// ############################################################################ //
+
+$page-layout-areas: (intro, blurb, footer, main);
+$page-template-areas: (
+  default: (
+    columns: 1fr,
+    rows: repeat(max-content),
+    areas: '"intro" "main" "blurb" "footer"'
+  ),
+  large: (
+    columns: 22rem 1fr,
+    areas: '"intro main" "blurb main" "footer main" "... main"'
+  )
+);
+
+// navbar brand settings
+// ############################################################################ //
+
+// colors
+$navbar-brand-color-hover: $color-primary-300;
+
+// font
+$navbar-brand-font-size: 0.7rem;
+$navbar-brand-font-family: $navbar-font-family;
+$navbar-brand-font-weight: $font-weight-bold;
+$navbar-brand-letter-spacing: 0.25rem;
+
+// ############################################################################ //
+
+// navbar nav
+// ############################################################################ //
+
+// colors
+$navbar-nav-color: $color-neutral-400;
+$navbar-nav-background-color: $navbar-background-color;
+$navbar-nav-color-hover: $color-primary-300;
+
+// spacing
+$navbar-nav-gap: $size-8;
+$navbar-nav-gap: $size-8;
+
+// font
+$navbar-nav-link-text-decoration: none;
+$navbar-nav-font-size: 0.7rem;
+$navbar-nav-font-family: $navbar-font-family;
+$navbar-nav-font-weight: $font-weight-default;
+$navbar-nav-letter-spacing: 0.25rem;
+
+// ############################################################################ //
+
+// site footer
+$footer-background-color: $color-primary-300;
+$footer-text-color: $color-primary-900;
+$footer-link-color: $color-neutral-100;
+$footer-link-color-hover: $color-primary-200;
+$footer-link-font-family: $font-family-accent;
+$footer-link-text-decoration: none;
+
+// buttons
+$button-font-family: $body-font-family;
+$button-font-size: $font-size-400;
+$button-font-weight: $font-weight-bold;
+$button-text-transform: text-uppercase;
+$button-padding: 0.75em 2em;
+$button-border: 0;
+$button-border-radius: $border-radius-1;
+
+$button-accent-color: $color-neutral-100;
+$button-accent-background: $color-accent-400;
+$button-accent-color-hover: $color-neutral-100;
+$button-accent-background-hover: $color-accent-500;
+$button-primary-color: $color-neutral-100;
+$button-primary-background: $color-primary-700;
+$button-primary-color-hover: $color-neutral-100;
+$button-primary-background-hover: $color-primary-800;
+
+// cards
+$card-flow-spacing: $size-2;
+$card-padding: $size-8;
+$card-shadow: $box-shadow-1;
+$card-border-radius: $border-radius-2;
+$card-background-default: $color-primary-100;
+$card-color-default: $body-text-color;
+$card-font-family: $body-font-family;
+$card-line-height: 1.25;
+$card-heading-color-default: $card-color-default;
+$card-heading-font-size: $font-size-600;
+
+// forms
+$form-label-color: $body-text-color;
+$form-label-font-family: $body-font-family;
+$form-label-font-weight: $font-weight-bold;
+$form-label-font-size: $body-font-size;
+
+$form-input-color: $body-text-color;
+$form-input-font-family: $body-font-family;
+$form-input-font-weight: $font-weight-semi-bold;
+$form-input-font-size: $body-font-size;
+$form-input-background-color: $color-neutral-100;
+$form-input-border-default: 3px solid $color-primary-200;
+$form-input-border-focus: 3px solid $color-primary-400;
+$form-input-padding: $size-3;
+$form-input-border-radius: $border-radius-1;
+
+$form-placeholder-color: $color-primary-300;
+$form-placeholder-font-family: $form-input-font-family;
+$form-placeholder-font-weight: $form-input-font-weight;
+$form-placeholder-font-size: $body-font-size;
+
+$form-group-spacing: 0.5rem;

@@ -1,0 +1,36 @@
+@use "../abstracts" as *;
+
+.divide {
+    &-x {
+        @each $size, $value in $border-sizes {
+            &-#{$size} > * + * {
+                border-left-width: #{$size}px;
+                border-right-width: 0px;
+            }
+        }
+    }
+
+    &-y {
+        @each $size, $value in $border-sizes {
+            &-#{$size} > * + * {
+                border-top-width: #{$size}px;
+                border-bottom-width: 0px;
+            }
+        }
+    }
+
+    @each $type in $border-type {
+        
+        &-#{$type} > * + * {
+            border-style: #{$type};
+        }
+    }
+
+    @each $color, $shade-map in $active-theme {
+        @each $shade, $value in $shade-map {
+            &-#{$color}-#{$shade} > * + * {
+                border-color: #{$value};
+            }
+        }
+    }
+}

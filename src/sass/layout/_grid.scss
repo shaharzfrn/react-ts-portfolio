@@ -1,0 +1,21 @@
+@use '../abstracts' as *;
+
+.grid {
+    display: grid;
+    gap: var(--grid-gap, $grid-gap);
+
+    grid-template-columns: var(--grid-template-columns, repeat(auto-fit, minmax(min(250px, 100%), 1fr)));
+    grid-template-rows: var(--grid-template-rows, none);
+    grid-template-areas: var(--grid-template-areas, none);
+
+    --grid-template-columns: initial;
+    --grid-template-rows: initial;
+    --grid-template-areas: initial;
+
+    & .even-rows {
+        gap: 0;
+        grid-template-columns: none;
+        grid-template-rows: repeat(auto-fit, minmax(min(250px, 100%), 1fr));
+        grid-template-areas: none;
+    }
+}

@@ -4,6 +4,7 @@ const data = [
     position: 'Full-Stack Developer',
     url: '',
     startDate: '2019-06-01',
+    endDate: undefined,
     summary: (
       <>
         Full-Stack Developer freelancer. write softwares from scratch, continued
@@ -15,13 +16,14 @@ const data = [
         Work mainly on <a href="https://www.fiverr.com/shaharzfrn">Fiverr</a>{' '}
         with client all over the world.
       </>,
-      <>Most of my programming works was in Python and Java.</>,
+      <>Most of my programming works was in Python, C++ and Java.</>,
       <>All of my IT work was on Linux (mainly servers).</>,
       <>
         Work on small project in{' '}
         <a href="https://www.walkme.com" target="_blank" rel="noreferrer">
           walkme
         </a>
+        .
       </>,
     ],
   },

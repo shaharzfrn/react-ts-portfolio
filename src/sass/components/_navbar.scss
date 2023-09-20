@@ -1,0 +1,113 @@
+@use "../abstracts" as *;
+
+.navbar {
+
+    // --border-bottom: #{$navbar-border};
+
+    display: flex;
+    position: fixed;
+
+    align-items: center;
+    height: $navbar-height;
+
+    @at-root {
+        body {
+            padding-top: $navbar-height;
+        }
+    }
+
+    inset: 0 0 auto 0;
+
+    z-index: $navbar-z-index;
+
+    color: $navbar-color;
+    background-color: $navbar-background-color;
+
+    container: navbar / inline-size;
+
+    a {
+        color: inherit;
+        text-decoration: none;
+        border-bottom: 0;
+        text-transform: uppercase;
+    }
+
+    &-container {
+        display: grid;
+
+        grid-template-columns: repeat(auto-fill, 1fr);
+        grid-template-areas: "brand toggle-button";
+
+        gap: $size-4;
+        align-items: $navbar-alignment;
+        justify-content: $navbar-jusitifcation-small-screens;
+    }
+
+    &-brand {
+        grid-area: brand;
+        white-space: nowrap;
+
+        a {
+            font-size: $navbar-brand-font-size;
+            font-family: $navbar-brand-font-family;
+            font-weight: $navbar-brand-font-weight;
+            letter-spacing: $navbar-brand-letter-spacing;
+        }
+    }
+
+    &-toggle {
+        grid-area: toggle-button;
+    }
+
+    &-nav {
+
+        --nav-gape: 3rem;
+        --nav-div: solid 1px #{$navbar-nav-color};
+
+        grid-area: nav;
+        color: $navbar-nav-color;
+
+        font-family: $navbar-nav-font-family;
+        font-size: $navbar-nav-font-size;
+        font-weight: $navbar-nav-font-weight;
+        letter-spacing: $navbar-nav-letter-spacing;
+    }
+}
+
+@include container(navbar, min, medium) {
+    .navbar {
+        &-container {
+            grid-template-areas: "brand nav";
+            justify-content: $navbar-jusitifcation-large-screens;
+        }
+
+        &-nav {
+            grid-area: nav;
+        }
+
+        &-toggle {
+            display: none;
+        }
+    }
+}
+
+@include container(navbar, max, medium) {
+    .navbar {
+        &-nav {
+            position: fixed;
+            height: calc(100vh - 100%);
+            z-index: 100;
+            inset: 100% 0 0 50%;
+            list-style: none;
+            padding: min(20rem, 15vh) 2rem;
+            margin: 0;
+            background-color: $navbar-background-color;
+            transform: translateX(100%);
+            transition: transform 500ms ease-in-out;
+
+            &[data-visible="true"] {
+                transform: translateX(0);
+            }
+        }
+    }
+}

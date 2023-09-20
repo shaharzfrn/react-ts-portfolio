@@ -1,0 +1,147 @@
+@use "../abstracts" as *;
+
+$default-border: solid 1px red;
+
+// full border
+/* ############################################################## */
+.border {
+    @each $size, $value in $border-sizes {
+        &-#{$size} {
+            border-width: #{$size}px;
+        }
+    }
+
+    @each $type in $border-type {
+        &-#{$type} {
+            border-style: #{$type};
+        }
+    }
+
+    @each $color, $shade-map in $active-theme {
+        @each $shade, $value in $shade-map {
+            &-#{$color}-#{$shade} {
+                border-color: #{$value};
+            }
+        }
+    }
+}
+@each $short, $break in $breakpoints-short {
+    @include mq-min($break) {
+        @each $size, $value in $border-sizes {
+            .#{$short}\:border-#{$size} {
+                border-width: #{$size}px;
+            }
+        }
+
+        @each $type in $border-type {
+            .#{$short}\:border-#{$type} {
+                border-style: #{$type};
+            }
+        }
+
+        @each $color, $shade-map in $active-theme {
+            @each $shade, $value in $shade-map {
+                .#{$short}\:border-#{$color}-#{$shade} {
+                    border-color: #{$value};
+                }
+            }
+        }
+    }
+}
+/* ############################################################## */
+
+// partial border
+/* ############################################################## */
+
+
+// .border-left {}
+// .lg\:border-left {}
+
+// .border-left-0 {}
+// .border-left-1 {}
+// .border-left-2 {}
+// .lg\:border-left-0 {}
+// .lg\:border-left-1 {}
+
+
+.border {
+    @each $side in $box-sides {
+        @each $size, $value in $border-sizes {
+            &-#{$side}-#{$size} {
+                border-#{$side}-width: #{$size}px;
+            }
+        }
+
+        &-#{$side} {
+            border-#{$side}: var(--border-#{$side}, #{$default-border});
+        }
+    }
+}
+
+@each $short, $break in $breakpoints-short {
+    @include mq-min($break) {
+        @each $side in $border-sides {
+            @each $size, $value in $border-sizes {
+                .#{$short}\:border-#{$side}-#{$size} {
+                    border-#{$side}-width: #{$size}px;
+                }
+            }
+
+            .#{$short}\:border-#{$side} {
+                border-#{$side}: var(--border-#{$side}, #{$default-border});
+            }
+        }
+    }
+}
+
+
+
+/* ############################################################## */
+
+// @each $side in $border-sides {
+//     .border-#{$side} {
+//         border-#{$side}: var(--border-#{$side}, #{$default-border});
+//     }
+// }
+
+// @each $short, $size in $breakpoints-short {
+//     @include mq-min($size) {
+//         @each $side in $border-sides {
+//             .#{$short}\:border-#{$side} {
+//                 border-#{$side}: var(--border-#{$side}, #{$default-border});
+//             }
+//         }
+//     }
+// }
+
+// @each $short, $size in $breakpoints-short {
+//     @each $side in $border-sides {
+//         .border-#{$side} {
+//             border-#{$side}: var(--border-#{$side}, #{$default-border});
+//         }
+//     }
+// }
+
+// @each $short, $size in $breakpoints-short {
+//     @include mq-min($size) {
+//         .#{$short}\:border {
+//             border: var(--border, #{$default-border});
+//         }
+
+//         @each $side in $border-sides {
+//             .#{$short}\:border-#{$side} {
+//                 border-#{$side}: var(--border-#{$side}, #{$default-border});
+//             }
+//         }
+//     }
+// }
+
+// .border {
+//     border: var(--border, #{$default-border});
+
+//     @each $side in $border-sides {
+//         &-#{$side} {
+//             border-#{$side}: var(--border-#{$side}, #{$default-border});
+//         }
+//     }
+// }

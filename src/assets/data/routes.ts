@@ -9,7 +9,7 @@ const routes = [
     index: false,
     label: 'About',
     path: '/about',
-    disable: true,
+    disable: false,
   },
   {
     index: false,

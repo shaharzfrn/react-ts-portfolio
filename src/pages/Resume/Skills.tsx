@@ -1,98 +1,78 @@
-import { useState, PropsWithChildren } from 'react';
-import Post from '../../components/Post/Post';
-
+import { useState } from 'react';
 import { skills, categories, colors } from '../../assets/data/resume/skills';
+import GradientCircleProgressbar from '../../components/Progressbar/GradientCircleProgressbar';
+import Section from '../../components/Section/Section';
 
-interface SkillBarProps {
+interface SkillProps {
   title: string;
   competency: number; // out of 5
 }
 
-function SkillBar({ title, competency }: SkillBarProps) {
-  const barStyle = {
-    width: `${String(Math.max((competency / 5.0) * 100.0, 0))}%`,
-    backgroundColor: colors[competency - 1],
-  };
-
+function Skill({ title, competency }: SkillProps) {
   return (
-    <div className="skillbar">
-      <div className="skillbar-title">
-        <span>{title}</span>
-      </div>
-      <div className="skillbar-bar" style={barStyle} />
-      <div className="skillbar-percent">{competency} / 5</div>
-    </div>
-  );
-}
-
-interface SkillsBarsProps {
-  filterCategory: string;
-}
-
-function SkillsBars({ filterCategory }: PropsWithChildren<SkillsBarsProps>) {
-  return (
-    <div>
-      {skills
-        .filter((skill) => {
-          return (
-            filterCategory === 'All' || skill.category.includes(filterCategory)
-          );
-        })
-        .map((skill) => {
-          const { title, competency } = skill;
-          return <SkillBar key={title} title={title} competency={competency} />;
-        })}
-    </div>
-  );
-}
-
-interface CategoriesProps {
-  setFilter: React.Dispatch<React.SetStateAction<string>>;
-}
-
-function Categories({ setFilter }: PropsWithChildren<CategoriesProps>) {
-  const onClick = (e: React.MouseEvent<HTMLButtonElement>) => {
-    console.log(e.currentTarget.getAttribute('value'));
-    setFilter(String(e.currentTarget.getAttribute('value')));
-  };
-
-  return (
-    <div className="filter-container align-center">
-      {['All', ...categories].map((cat) => {
-        return (
-          <button
-            type="button"
-            key={cat}
-            onClick={onClick}
-            value={cat}
-            className="skill-filter"
-          >
-            {cat}
-          </button>
-        );
-      })}
+    <div className="card bg-neutral-000 items-center">
+      <GradientCircleProgressbar
+        percentage={(competency / 5) * 100}
+        text={`${competency} / 5`}
+        width={150}
+        primaryColor={[
+          colors[Math.max(Math.floor(competency - 1), 0)],
+          colors[Math.max(Math.floor(competency - 1), 0)],
+        ]}
+      />
+      <p className="text-center">{title}</p>
     </div>
   );
 }
 
 function Skills() {
-  const [filter, setFilter] = useState<string>('All');
+  const [category, setCategory] = useState('All');
+
   return (
-    <Post.Section divider="down" id="skills">
-      <Post.SectionHeader position="center">
-        <h3 className="h3">
-          <a href="#skills" className="link">
-            skills{filter === 'All' ? '' : ` - ${filter}`}
+    <Section id="skills">
+      <Section.Header>
+        <h1 className="text-uppercase fw-bold clr-neutral-900 fs-500 text-center margin-block-end-4 tracking-wide">
+          <a href="#education" className="border-bottom-0 ">
+            skills
           </a>
-        </h3>
-      </Post.SectionHeader>
-      <Post.Body>
-        <div className="skill-container">
-          <Categories setFilter={setFilter} />
-          <SkillsBars filterCategory={filter} />
+          {category !== 'All' ? ` - ${category}` : null}
+          <p className="fs-100 fw-regular text-regular clr-neutral-700">
+            {' '}
+            [ *As honest as I can ]{' '}
+          </p>
+        </h1>
+        <div className="text-center fs-100 margin-block-end-4">
+          <p>
+            <span className="fw-bold">Note:</span> Everyone seems to have one of
+            those skills bars, I think it&apos;s silly.
+          </p>
         </div>
-      </Post.Body>
-    </Post.Section>
+        <div className="flex-group mx-auto">
+          {['All', ...categories].map((cat) => {
+            return (
+              <button
+                key={cat}
+                type="button"
+                className="button fs-100 bg-neutral-200"
+                onClick={() => setCategory(cat)}
+              >
+                {cat}
+              </button>
+            );
+          })}
+        </div>
+      </Section.Header>
+      <div className="flex-group mx-auto">
+        {skills
+          .filter(
+            (skill) => category === 'All' || skill.category.includes(category)
+          )
+          .map((skill) => {
+            const { title, competency } = skill;
+            return <Skill key={title} title={title} competency={competency} />;
+          })}
+      </div>
+    </Section>
   );
 }
 

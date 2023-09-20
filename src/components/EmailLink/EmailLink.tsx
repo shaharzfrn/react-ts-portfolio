@@ -46,9 +46,10 @@ function EmailLink() {
       updateChar(newChar + 1);
     }
   });
+
   return (
     <div
-      className="inline-container"
+      className=""
       onMouseEnter={() => setIsActive(false)}
       onMouseLeave={() => idx < MESSAGES.length && setIsActive(true)}
     >

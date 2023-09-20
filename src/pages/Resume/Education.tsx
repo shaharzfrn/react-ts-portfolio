@@ -1,6 +1,6 @@
-import Post from '../../components/Post/Post';
+import Section from '../../components/Section/Section';
 
-import education from '../../assets/data/resume/education';
+import degrees from '../../assets/data/resume/education';
 
 interface DagreeProps {
   school: string;
@@ -11,10 +11,10 @@ interface DagreeProps {
 
 function Degree({ school, degree, link, year }: DagreeProps) {
   return (
-    <article className="degree-container">
-      <header>
-        <h4 className="h4 degree">{degree}</h4>
-        <p className="school">
+    <article className="">
+      <header className="">
+        <p className="clr-neutral-900 fw-semi-bold">{degree}</p>
+        <p className="margin-block-end-4 fs-100">
           {link !== undefined ? <a href={link}>{school}</a> : school}. {year}
         </p>
       </header>
@@ -24,29 +24,27 @@ function Degree({ school, degree, link, year }: DagreeProps) {
 
 function Education() {
   return (
-    <Post.Section divider="down" id="education">
-      <Post.SectionHeader position="center">
-        <h3 className="h3">
-          <a href="#education" className="link">
+    <Section id="education">
+      <Section.Header>
+        <h1 className="text-uppercase fw-bold clr-neutral-900 fs-500 text-center margin-block-end-4 tracking-wide">
+          <a href="#education" className="border-bottom-0">
             education
           </a>
-        </h3>
-      </Post.SectionHeader>
-      <Post.Body>
-        {education.map((item) => {
-          const { school, degree, link, year } = item;
-          return (
-            <Degree
-              key={school}
-              school={school}
-              degree={degree}
-              link={link}
-              year={year}
-            />
-          );
-        })}
-      </Post.Body>
-    </Post.Section>
+        </h1>
+      </Section.Header>
+      {degrees.map((item: DagreeProps) => {
+        const { school, degree, link, year } = item;
+        return (
+          <Degree
+            key={school}
+            school={school}
+            degree={degree}
+            link={link}
+            year={year}
+          />
+        );
+      })}
+    </Section>
   );
 }
 

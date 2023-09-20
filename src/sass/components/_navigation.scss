@@ -1,0 +1,28 @@
+@use "../abstracts" as *;
+
+.nav {
+    --flex-direction: column;
+    --flex-column-gap: var(--nav-gape);
+    --flex-row-gap: var(--nav-gape);
+
+    list-style: none;
+}
+
+@include container("", min, medium) {
+    .nav {
+        --flex-direction: row;
+
+        margin: 0;
+        padding: 0;
+
+        &-item {
+            &:not(:first-child):before {
+                content: "";
+                position: relative;
+                border-left: var(--nav-div, none);
+                left: calc(var(--nav-gape) * -0.5);
+                height: 100%;
+            }
+        }
+    }
+}

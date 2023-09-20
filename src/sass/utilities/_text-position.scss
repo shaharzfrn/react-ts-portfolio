@@ -1,0 +1,25 @@
+@use "../abstracts" as *;
+
+.text-start {
+    text-align: start;
+}
+.text-center {
+    text-align: center;
+}
+.text-end {
+    text-align: end;
+}
+
+@each $short, $size in $breakpoints-short {
+    @include mq-min($size) {
+        .#{$short}\:text-start {
+            text-align: start;
+        }
+        .#{$short}\:text-center {
+            text-align: center;
+        }
+        .#{$short}\:text-end {
+            text-align: end;
+        }
+    }
+}

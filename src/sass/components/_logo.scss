@@ -1,0 +1,13 @@
+    .logo {
+        border-bottom: 0;
+        display: inline-block;
+        margin: 0 0 1rem 0;
+        overflow: hidden;
+        // position: relative;
+
+        img {
+            width: 10em;
+            border-radius: 50%;
+            display: block;
+        }
+    }

@@ -1,0 +1,47 @@
+@use "../abstracts/" as *;
+
+*,
+:after,
+:before {
+  box-sizing: border-box;
+  border: 0 solid #e5e7eb;
+}
+
+body {
+  font-family: $body-font-family;
+  font-weight: $body-font-weight;
+  font-size: $body-font-size;
+  color: $body-text-color;
+  background-color: $body-background-color;
+  line-height: $body-line-height;
+}
+
+a {
+  color: inherit;
+  text-decoration: $link-decoration-style;
+  border-bottom: $link-border-decoration;
+
+  transition: color 0.2s ease;
+  transition: border-bottom-color 0.2s ease;
+
+  &::before {
+    transition: color 0.2s ease;
+  }
+
+  &:is(:hover, :focus) {
+    border-bottom-color: transparent;
+    color: $link-color-hover !important;
+
+    &:before {
+      color: $link-color-hover !important;
+    }
+  }
+}
+
+// a {
+//   color: $link-color;
+// }
+
+// a:is(:hover, :focus) {
+//   color: $link-color-hover;
+// }

@@ -1,0 +1,23 @@
+
+@use '../abstracts' as *;
+
+.sidebar {
+    &-item  {
+        
+        --flow-spacer: initial;
+        margin-inline: 1rem;
+
+        &:has(~ &) {
+            padding-bottom: 2rem;
+        }
+    }
+}
+
+@include mq-min(large) {
+    .sidebar {
+        &-item  {
+            // margin-inline: 0;
+        }
+    }
+}
+

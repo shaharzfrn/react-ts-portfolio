@@ -1,47 +1,81 @@
-import { PropsWithChildren } from 'react';
-import { HelmetProvider } from 'react-helmet-async';
+import { PropsWithChildren, Children } from 'react';
 
-import SEO from '../../components/SEO/SEO';
+import { HelmetProvider, Helmet } from 'react-helmet-async';
 
-import NavBar from '../../components/NavBar';
-import SideBar from '../../components/SideBar';
+import Navbar from '../../components/NavBar/Navbar';
+import Sidebar from '../../components/Sidebar/Sidebar';
 
-export interface PageProps {
+interface LayoutProps {
   title: string;
   description: string;
 }
 
-function Page({ title, description, children }: PropsWithChildren<PageProps>) {
+function Page({
+  title = '',
+  description = '',
+  children,
+}: PropsWithChildren<LayoutProps>) {
   return (
-    // https://www.freecodecamp.org/news/react-helmet-examples/
     <HelmetProvider>
-      <SEO title={title} description={description} />
-      {/* <Helmet
-        titleTemplate="%s | shaharzfrn"
-        defaultTitle="shaharzfrn"
-        defer={false}
-      >
-        {title && <title>{title}</title>}
-        <meta name="description" content={description} />
-      </Helmet> */}
-      <div className="page-wrapper">
-        <NavBar />
-
-        <div className="page-body">{children}</div>
-        <SideBar />
+      <div className="page">
+        <Helmet
+          titleTemplate="%s | Shaharzfrn"
+          defaultTitle="Shaharzfrn"
+          defer={false}
+        >
+          <title>{title}</title>
+          <meta name="description" content={description} />
+        </Helmet>
+        <Navbar />
+        <div className="page-container | grid | lg:margin-block-8 lg:margin-inline-10 ">
+          <Sidebar />
+          <div className="page-main">
+            <div className="flow | bg-neutral-000 clr-neutral-600 | border-block lg:border-inline padding-block-5">
+              {children}
+            </div>
+          </div>
+        </div>
       </div>
     </HelmetProvider>
   );
 }
 
-function Header({ children }: PropsWithChildren) {
+function LayoutTitle({ children }: PropsWithChildren) {
+  const childrenArr = Children.toArray(children);
+
   return (
-    <header className="page-header">
-      <div className="page-title">{children}</div>
-    </header>
+    <div className="page-section-title | text-center lg:text-start text-uppercase | border-bottom padding-inline-8 padding-block-10 ">
+      <h1 className="heading-2 fw-bold padding-block-end-8 tracking-widest">
+        {childrenArr[0]}
+      </h1>
+      <div className="text-uppercase fs-100 fw-regular">
+        {childrenArr.slice(1)}
+      </div>
+    </div>
   );
 }
 
-Page.Header = Header;
+interface LayoutBodyProps {
+  id?: string | undefined;
+}
 
-export default Page;
+function LayoutBody({
+  id = undefined,
+  children,
+}: PropsWithChildren<LayoutBodyProps>) {
+  return (
+    <div
+      id={id}
+      className="page-section-body | flow | padding-inline-8 padding-block-8"
+    >
+      {children}
+    </div>
+  );
+}
+
+// Page.Title =
+
+export default Object.assign(Page, {
+  Title: LayoutTitle,
+  Body: LayoutBody,
+});

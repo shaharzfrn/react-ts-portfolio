@@ -1,0 +1,38 @@
+
+// @use '../abstracts' as *;
+
+// .text-center {
+//   text-align: center;
+// }
+
+
+
+// @each $short, $size in $breakpoints-short {
+//   // @debug $size;
+//   @include mq-min($size) {
+//     .#{$short}\:text-start {
+//       text-align: start;
+//     }
+//     .#{$short}\:text-center {
+//       text-align: center;
+//     }
+//     .#{$short}\:text-end {
+//       text-align: end;
+//     }
+//   }
+
+
+// }
+
+
+
+// // @include mq-min(large) {
+// //   .large-text-start {
+// //     text-align: start;
+// //   }
+
+// //   .large\:text-start {
+// //     text-align: end;
+// //   }
+// // }
+

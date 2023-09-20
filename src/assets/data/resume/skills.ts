@@ -7,7 +7,7 @@ const skills = [
   },
   {
     title: 'OpenGL',
-    competency: 3, // out of 5
+    competency: 4, // out of 5
     category: ['Languages', 'C/C++', 'Java'],
   },
   {
@@ -17,14 +17,9 @@ const skills = [
   },
 
   {
-    title: 'Java',
+    title: 'Java/FX',
     competency: 5, // out of 5
     category: ['Languages'],
-  },
-  {
-    title: 'JavaFX',
-    competency: 5, // out of 5
-    category: ['Languages', 'Java'],
   },
 
   //

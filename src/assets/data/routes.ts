@@ -21,7 +21,7 @@ const routes = [
     index: false,
     label: 'Projects',
     path: '/projects',
-    disable: true,
+    disable: false,
   },
   {
     index: false,

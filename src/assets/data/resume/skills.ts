@@ -1,9 +1,39 @@
 const skills = [
   //
   {
+    title: 'Python',
+    competency: 5, // out of 5
+    category: ['Languages'],
+  },
+  //
+  {
     title: 'C/C++',
     competency: 5, // out of 5
     category: ['Languages'],
+  },
+  //
+  {
+    title: 'JavaScript',
+    competency: 5, // out of 5
+    category: ['Web Development', 'Languages', 'Javascript'],
+  },
+  {
+    title: 'TypeScript',
+    competency: 4.5,
+    category: ['Web Development', 'Languages', 'TypeScript'],
+  },
+  //
+  {
+    title: 'Java/FX',
+    competency: 5, // out of 5
+    category: ['Languages'],
+  },
+
+  //
+  {
+    title: 'React',
+    competency: 4, // out of 5
+    category: ['Javascript', 'TypeScript', 'Web Development'],
   },
   {
     title: 'OpenGL',
@@ -17,20 +47,13 @@ const skills = [
   },
 
   {
-    title: 'Java/FX',
-    competency: 5, // out of 5
-    category: ['Languages'],
-  },
-
-  //
-  {
-    title: 'Python',
-    competency: 5, // out of 5
-    category: ['Languages'],
-  },
-  {
     title: 'Numpy',
-    competency: 2.5,
+    competency: 3.5,
+    category: ['Data Science', 'Data Engineering', 'Python', 'ML Engineering'],
+  },
+  {
+    title: 'Panada',
+    competency: 3,
     category: ['Data Science', 'Data Engineering', 'Python', 'ML Engineering'],
   },
   {
@@ -40,26 +63,15 @@ const skills = [
   },
   {
     title: 'PyTorch',
-    competency: 3,
+    competency: 4,
     category: ['ML Engineering', 'Python'],
   },
   {
     title: 'Jupyter',
-    competency: 3,
+    competency: 5,
     category: ['Data Science', 'Python'],
   },
 
-  //
-  {
-    title: 'Javascript',
-    competency: 5, // out of 5
-    category: ['Web Development', 'Languages', 'Javascript'],
-  },
-  {
-    title: 'Typescript',
-    competency: 3,
-    category: ['Web Development', 'Languages', 'Javascript'],
-  },
   {
     title: 'HTML + SASS/SCSS/CSS',
     competency: 5,
@@ -80,12 +92,27 @@ const skills = [
     competency: 5,
     category: ['Web Development', 'Databases', 'Languages'],
   },
+  {
+    title: 'GraphQL',
+    competency: 2,
+    category: ['Web Development', 'Databases'],
+  },
+  {
+    title: 'Neo4j',
+    competency: 2.5,
+    category: ['Web Development', 'Databases'],
+  },
 
   //
   {
     title: 'Bash',
     competency: 4,
     category: ['Tools', 'Languages'],
+  },
+  {
+    title: 'Git',
+    competency: 3,
+    category: ['Tools'],
   },
   {
     title: 'Docker',

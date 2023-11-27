@@ -14,3 +14,15 @@
 .flex-group.mx-auto {
   justify-content: center;
 }
+
+
+
+.flex-group-gap-0 {
+  --flex-column-gap: 0rem;
+  --flex-row-gap: 0rem;
+}
+
+.flex-group-gap-1 {
+  --flex-column-gap: #{$size-1};
+  --flex-row-gap: #{$size-1};
+}

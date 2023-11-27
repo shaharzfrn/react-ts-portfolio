@@ -7,14 +7,16 @@ export default function Home() {
     <Page title="Home" description="Home Page">
       <Page.Title>
         <Link to="/">About this site</Link>A BEAUTIFUL, RESPONSIVE,
-        STATICALLY-GENERATED, REACT APPLICATION WRITTEN WITH MODERN JAVASCRIPT.
+        STATICALLY-GENERATED, REACT APPLICATION WRITTEN WITH MODERN TYPESCRIPT.
       </Page.Title>
       <Page.Body>
         <Section>
           <p>Welcome to my website.</p>
           <p>
             Please feel free to read more <Link to="/about">about me</Link>, you
-            can check out my <Link to="/resume">resume</Link> or contact me.
+            can check out my <Link to="/resume">resume</Link>, see some of my{' '}
+            <Link to="/projects">projects</Link> or{' '}
+            <Link to="/contact">contact me</Link>.
           </p>
           <p className="padding-block-start-4">
             Source available{' '}
@@ -28,6 +30,19 @@ export default function Home() {
             .
           </p>
         </Section>
+
+        {/* <Section>
+          <Section.Header>
+            <h1 className="text-uppercase fw-bold clr-neutral-900 fs-500 padding-block-end-2">
+              Comming Soon
+            </h1>
+          </Section.Header>
+          <ul className="padding-inline-start-5">
+            <li>
+              Projects Page - You be able to see All of my PERSONAL Projects
+            </li>
+          </ul>
+        </Section> */}
       </Page.Body>
       <slot />
     </Page>

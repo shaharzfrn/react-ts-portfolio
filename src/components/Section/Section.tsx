@@ -16,9 +16,7 @@ function Section({
 }
 
 function SectionHeader({ children }: PropsWithChildren) {
-  return (
-    <div className="section2-header | padding-block-end-2">{children}</div>
-  );
+  return <div className="padding-block-end-2">{children}</div>;
 }
 
 export default Object.assign(Section, {

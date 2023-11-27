@@ -62,7 +62,7 @@ function Skills() {
           })}
         </div>
       </Section.Header>
-      <div className="flex-group mx-auto">
+      <div className="grid-auto-fit">
         {skills
           .filter(
             (skill) => category === 'All' || skill.category.includes(category)

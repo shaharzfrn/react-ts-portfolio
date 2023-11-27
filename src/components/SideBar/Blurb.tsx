@@ -1,3 +1,4 @@
+import randomColor from 'randomcolor';
 import { useEffect, useState } from 'react';
 import { Link, useLocation as useRouterLocation } from 'react-router-dom';
 
@@ -24,11 +25,33 @@ function Blurb() {
         <a href="https://www.technion.ac.il/en/home-2/">Technion</a> graduate.
       </p>
       {location === '/resume' ? (
-        <Link to="/about" className="button" data-type="accent">
+        <Link
+          to="/about"
+          className="button"
+          data-type="accent"
+          style={{
+            backgroundColor: randomColor({
+              luminosity: 'light',
+              hue: 'blue',
+              seed: 'zzzzzz',
+            }),
+          }}
+        >
           About Me!
         </Link>
       ) : (
-        <Link to="/resume" className="button" data-type="primary">
+        <Link
+          to="/resume"
+          className="button"
+          data-type="primary"
+          style={{
+            backgroundColor: randomColor({
+              luminosity: 'light',
+              hue: 'purple',
+              seed: 12390,
+            }),
+          }}
+        >
           Learn More!
         </Link>
       )}

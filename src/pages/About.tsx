@@ -6,6 +6,7 @@ import Page from '../layouts/Page';
 import Section from '../components/Section/Section';
 
 import { intro, someHistory, thingsILike } from '../assets/data/about';
+import Age from '../components/Age';
 
 function useWordCount(id: string) {
   const [words, setWords] = useState(0);
@@ -36,6 +37,10 @@ function About() {
               Intro
             </h1>
           </Section.Header>
+          <p>
+            <span className="fw-semi-bold">Hi there</span>, I&apos;m Shahar,{' '}
+            <Age /> years old from Israel.
+          </p>
           {intro.map((part) => {
             return <p key={Math.random()}>{part}</p>;
           })}

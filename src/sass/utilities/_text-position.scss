@@ -10,6 +10,7 @@
     text-align: end;
 }
 
+
 @each $short, $size in $breakpoints-short {
     @include mq-min($size) {
         .#{$short}\:text-start {

@@ -3,12 +3,34 @@ import { Link } from 'react-router-dom';
 import Page from '../../layouts/Page';
 import Section from '../../components/Section/Section';
 
-import projects from '../../assets/data/projects';
+import projects, { ProjectProps } from '../../assets/data/projects';
 import TagsList from '../../components/TabsList/TagsList';
 
-function Projects() {
+function Project({ title, link, image, description, tags }: ProjectProps) {
   return (
-    <Page title="Projects" description="">
+    <div className="card | bg-primary-100">
+      <Section>
+        <Section.Header>
+          <h2 className="card__heading fw-bold clr-neutral-900 fs-700 padding-block-end-0 margin-block-end-1">
+            <a href={link} className="border-0">
+              {title}
+            </a>
+          </h2>
+          <TagsList tags={tags} />
+        </Section.Header>
+        <p className="padding-block-start-2">{description}</p>
+        {image ? <img src={image} alt="" /> : null}
+      </Section>
+    </div>
+  );
+}
+
+function Projects() {
+  // TODO:
+  // 1) make each project subgrid of the projects grid
+  // 2) add 'Learn more...' at the end of each project, place it at the bottom of the card
+  return (
+    <Page title="Projects" description="projects, personal projects">
       <Page.Title>
         <Link to="/projects">Projects</Link>
         <p>
@@ -20,21 +42,16 @@ function Projects() {
       <Page.Body>
         <div className="grid-auto-fit">
           {projects.map((project) => {
+            const { title, link, image, description, tags } = project;
             return (
-              <div key={project.title} className="card | bg-primary-100">
-                <Section>
-                  <Section.Header>
-                    <h2 className="card__heading fw-bold clr-neutral-900 fs-700 padding-block-end-0 margin-block-end-1">
-                      <a href={project.link} className="border-0">
-                        {project.title}
-                      </a>
-                    </h2>
-                    <TagsList tags={project.tags} />
-                  </Section.Header>
-                  <p className="padding-block-start-2">{project.description}</p>
-                  {project.image ? <img src={project.image} alt="" /> : null}
-                </Section>
-              </div>
+              <Project
+                key={title}
+                title={title}
+                link={link}
+                image={image}
+                description={description}
+                tags={tags}
+              />
             );
           })}
         </div>

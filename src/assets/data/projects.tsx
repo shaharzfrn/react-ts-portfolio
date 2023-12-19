@@ -1,6 +1,19 @@
 import randomColor from 'randomcolor';
 
-const projects = [
+export type TagProps = {
+  title: string;
+  color: string;
+};
+
+export type ProjectProps = {
+  title: string;
+  link: string;
+  image: string;
+  description: string;
+  tags: TagProps[];
+};
+
+const projects: ProjectProps[] = [
   {
     title: 'React Portfolio',
     link: 'https://github.com/shaharzfrn/react-ts-portfolio',

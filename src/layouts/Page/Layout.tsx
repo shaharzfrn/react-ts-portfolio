@@ -5,6 +5,8 @@ import { HelmetProvider, Helmet } from 'react-helmet-async';
 import Navbar from '../../components/NavBar/Navbar';
 import Sidebar from '../../components/Sidebar/Sidebar';
 
+import { metas, Meta } from '../../assets/data/seo';
+
 interface LayoutProps {
   title: string;
   description: string;
@@ -15,6 +17,8 @@ function Page({
   description = '',
   children,
 }: PropsWithChildren<LayoutProps>) {
+  const metaDescription = `shaharzfrn.com ${description}`;
+
   return (
     <HelmetProvider>
       <div className="page">
@@ -24,7 +28,17 @@ function Page({
           defer={false}
         >
           <title>{title}</title>
-          <meta name="description" content={description} />
+          <meta name="description" content={metaDescription} />
+
+          {metas.map((meta: Meta) => {
+            return (
+              <meta
+                key={Math.random()}
+                name={meta.name}
+                content={meta.content}
+              />
+            );
+          })}
         </Helmet>
         <Navbar />
         <div className="page-container | grid | lg:margin-block-8 lg:margin-inline-10 ">

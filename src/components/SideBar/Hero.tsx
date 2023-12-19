@@ -9,7 +9,7 @@ function Hero() {
         to="/"
         className="logo round | lg:padding-block-start-0 padding-block-start-10"
       >
-        <img src={`${PUBLIC_URL}/images/me_4.png`} alt="" />
+        <img src={`${PUBLIC_URL}/images/me_5.jpeg`} alt="" />
       </Link>
       <h1 className="fw-bold fs-700 tracking-widest | text-uppercase">
         {BRAND}

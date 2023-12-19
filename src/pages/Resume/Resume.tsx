@@ -11,7 +11,7 @@ const SECTIONS = ['education', 'experience', 'skills', 'courses', 'extra'];
 
 function Resume() {
   return (
-    <Page title="Resume" description="Resume">
+    <Page title="Resume" description="Resume, skills, education, experience">
       <Page.Title>
         <Link to="/resume">resume</Link>
         <ul className="bullet-list | flex-group | fs-400 ">

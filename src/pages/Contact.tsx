@@ -7,7 +7,7 @@ import EmailLink from '../components/EmailLink';
 
 function Contact() {
   return (
-    <Page title="" description="">
+    <Page title="" description="Contact Me, email, gmail, send a message">
       <Page.Title>
         <Link to="/contact">contact</Link>
         <p>I&apos;ts always good idea to keep in touch</p>

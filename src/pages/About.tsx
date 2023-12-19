@@ -25,7 +25,7 @@ function About() {
   const { words } = useWordCount('about-content');
 
   return (
-    <Page title="About" description="About">
+    <Page title="About" description="About, shahar zafran">
       <Page.Title>
         <Link to="/about">About me</Link>
         <p>(in about {words} words)</p>

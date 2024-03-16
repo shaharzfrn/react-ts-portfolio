@@ -3,7 +3,7 @@ import { ReactElement } from 'react';
 type AboutElement = string | ReactElement;
 
 const intro: AboutElement[] = [
-  "I'm just finish my B.A in Computer Science at the Technion.",
+  "I'm software engineer, working on embedded systems at Skysoft solutions",
 ];
 const someHistory: AboutElement[] = [
   'At 13, I start fly RC planes',
@@ -53,7 +53,7 @@ const someHistory: AboutElement[] = [
     </a>
     .
   </>,
-  "At 25, as I write this (Sep 20 2023) I'm about to finish my B.A in a few days.",
+  "At 25, as I write this (Sep 20 2023) I'm about to finish my B.Sc in a few days.",
 ];
 const thingsILike: AboutElement[] = [
   'Triathlon',

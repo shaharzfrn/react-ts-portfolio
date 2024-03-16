@@ -5,11 +5,9 @@ import Footer from './Footer';
 function Sidebar() {
   return (
     <>
-      {/* <div className="page-sidebar"> */}
       <Hero />
       <Blurb />
       <Footer />
-      {/* </div> */}
     </>
   );
 }

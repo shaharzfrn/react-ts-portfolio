@@ -21,8 +21,12 @@ function Blurb() {
         About Me
       </h2>
       <p>
-        Hi 👋, I&apos;m Shahar. I&apos;m am a{' '}
-        <a href="https://www.technion.ac.il/en/home-2/">Technion</a> graduate.
+        Hi there 👋
+        <br></br>
+        I&apos;m Shahar, a Software Engineer
+        <br></br>{' '}
+        currently working on embedded systems at {' '} 
+        <a href="'https://www.linkedin.com/company/skysoft-solutions-by-comm-it/mycompany/verification/'">Skysoft Solutions</a>.
       </p>
       {location === '/resume' ? (
         <Link

@@ -2,8 +2,8 @@ import { PropsWithChildren, Children } from 'react';
 
 import { HelmetProvider, Helmet } from 'react-helmet-async';
 
-import Navbar from '../../components/NavBar/Navbar';
-import Sidebar from '../../components/Sidebar/Sidebar';
+import Navbar from '../../components/NavBar';
+import Sidebar from '../../components/SideBar';
 
 import { metas, Meta } from '../../assets/data/seo';
 

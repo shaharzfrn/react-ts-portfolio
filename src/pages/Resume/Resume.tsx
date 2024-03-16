@@ -7,7 +7,7 @@ import Skills from './Skills';
 import Courses from './Courses';
 import Extra from './Extra';
 
-const SECTIONS = ['education', 'experience', 'skills', 'courses', 'extra'];
+const SECTIONS = ['experience', 'skills', 'education', 'courses', 'extra'];
 
 function Resume() {
   return (
@@ -28,9 +28,9 @@ function Resume() {
       </Page.Title>
       <Page.Body>
         <div className="flow">
-          <Education />
           <Experience />
           <Skills />
+          <Education />
           <Courses />
           <Extra />
         </div>

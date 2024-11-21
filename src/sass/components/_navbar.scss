@@ -63,10 +63,9 @@
 
         --nav-gape: 3rem;
         --nav-div: solid 1px #{$navbar-nav-color};
-
         grid-area: nav;
         color: $navbar-nav-color;
-
+        z-index: 9999;
         font-family: $navbar-nav-font-family;
         font-size: $navbar-nav-font-size;
         font-weight: $navbar-nav-font-weight;
@@ -95,9 +94,9 @@
     .navbar {
         &-nav {
             position: fixed;
-            height: calc(100vh - 100%);
+            height: max(100%, 100vh);
             z-index: 100;
-            inset: 100% 0 0 50%;
+            inset: $navbar-height 0 0 50%;
             list-style: none;
             padding: min(20rem, 15vh) 2rem;
             margin: 0;

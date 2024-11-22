@@ -6,7 +6,6 @@ const intro: AboutElement[] = [
   "I'm software engineer, working on embedded systems at Skysoft solutions",
 ];
 const someHistory: AboutElement[] = [
-  'At 13, I start fly RC planes',
   <>
     At 16, Only then I start play with computers, before that i just use them
     only for school homeworks, in the same year i accepted to the{' '}

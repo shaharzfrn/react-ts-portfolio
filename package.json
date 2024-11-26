@@ -1,7 +1,7 @@
 {
   "name": "react-ts-portfolio",
   "private": true,
-  "homepage": "https://shaharzfrn.com"
+  "homepage": "https://shaharzfrn.com",
   "version": "0.0.0",
   "type": "module",
   "scripts": {

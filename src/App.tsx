@@ -1,5 +1,5 @@
 import { Suspense } from 'react';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { HashRouter, BrowserRouter, Route, Routes } from 'react-router-dom';
 
 import Page from './layouts/Page';
 
@@ -14,7 +14,7 @@ import './sass/main.scss';
 
 function App() {
   return (
-    <BrowserRouter
+    <HashRouter
       basename={import.meta.env.DEV ? '/' : import.meta.env.BASE_URL}
     >
       <Suspense fallback={<Page title="" description="" />} />
@@ -26,7 +26,7 @@ function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 

@@ -1,5 +1,5 @@
 import { Suspense } from 'react';
-import { HashRouter, BrowserRouter, Route, Routes } from 'react-router-dom';
+import { HashRouter, Route, Routes } from 'react-router-dom';
 
 import Page from './layouts/Page';
 

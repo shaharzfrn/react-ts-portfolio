@@ -18,7 +18,7 @@ function App() {
       basename={import.meta.env.DEV ? '/' : import.meta.env.BASE_URL}
     >
       <Suspense fallback={<Page title="" description="" />} />
-      <Routes>
+      <Routes>  
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/resume" element={<Resume />} />

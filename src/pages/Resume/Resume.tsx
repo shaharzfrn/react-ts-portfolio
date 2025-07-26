@@ -1,4 +1,5 @@
-import { Link } from 'react-router-dom';
+import { useEffect, } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import Page from '../../layouts/Page';
 // import Section from '../../components/Section/Section';
 import Education from './Education';
@@ -7,37 +8,49 @@ import Skills from './Skills';
 import Courses from './Courses';
 import Extra from './Extra';
 
-const SECTIONS = ['experience', 'skills', 'education', 'courses', 'extra'];
+const SECTIONS = ['education', 'experience', 'skills', 'courses', 'extra'];
 
 function Resume() {
-  return (
-    <Page title="Resume" description="Resume, skills, education, experience">
-      <Page.Title>
-        <Link to="/resume">resume</Link>
-        <ul className="bullet-list | flex-group | fs-400 ">
-          {SECTIONS.map((section) => {
-            return (
-              <li key={section}>
-                <a href={`#${section}`} className="border-bottom-0">
-                  {section}
-                </a>
-              </li>
-            );
-          })}
-        </ul>
-      </Page.Title>
-      <Page.Body>
-        <div className="flow">
-          <Experience />
-          <Skills />
-          <Education />
-          <Courses />
-          <Extra />
-        </div>
-      </Page.Body>
-      <slot />
-    </Page>
-  );
+    const location = useLocation()
+
+    useEffect(() => {
+        // Scroll to the element with the ID from the fragment identifier
+        if (location.hash) {
+            const element = document.querySelector(location.hash)
+            if (element) {
+                element.scrollIntoView({ behavior: 'smooth' })
+            }
+        }
+    }, [location.hash])
+
+    return (
+        <Page title="Resume" description="Resume, skills, education, experience">
+            <Page.Title>
+                <Link to="/resume">resume</Link>
+                <ul className="bullet-list | flex-group | fs-400 ">
+                    {SECTIONS.map((section) => {
+                        return (
+                            <li key={section}>
+                                <Link to={`#${section}`} className="border-bottom-0">
+                                    {section}
+                                </Link>
+                            </li>
+                        );
+                    })}
+                </ul>
+            </Page.Title>
+            <Page.Body>
+                <div className="flow">
+                    <Education />
+                    <Experience />
+                    <Skills />
+                    <Courses />
+                    <Extra />
+                </div>
+            </Page.Body>
+            <slot />
+        </Page>
+    );
 }
 
 export default Resume;

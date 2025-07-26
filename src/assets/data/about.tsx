@@ -3,68 +3,112 @@ import { ReactElement } from 'react';
 type AboutElement = string | ReactElement;
 
 const intro: AboutElement[] = [
-  "I'm software engineer, working on embedded systems at Skysoft solutions",
+    "I'm software engineer, working on embedded systems at Skysoft solutions",
 ];
 const someHistory: AboutElement[] = [
-  'At 13, I start fly RC planes',
-  <>
-    At 16, Only then I start play with computers, before that i just use them
-    only for school homeworks, in the same year i accepted to the{' '}
-    <a
-      target="_blank"
-      href="https://academic.openu.ac.il/cs/computer/pages/default.aspx?_gl=1*nod8y5*_ga*MTgwMTk1OTM4My4xNjk1MTg1MTUy*_ga_D925SY5X0Q*MTY5NTE4NTE1Mi4xLjAuMTY5NTE4NTE1Mi42MC4wLjA."
-      rel="noreferrer"
-    >
-      Open University
-    </a>{' '}
-    to start my B.A degree in Computer Science.
-  </>,
-  'At 18-20, I serve in the IDF',
-  <>
-    At 21, I start to work as freelancer on{' '}
-    <a href="https://www.fiverr.com/shaharzfrn">Fiverr</a> and builded a
-    connections with multiple client that i&apos;m still working with them
-    today.
-  </>,
-  <>
-    At 22, I transfer to the{' '}
-    <a
-      target="_blank"
-      href="https://www.technion.ac.il/en/home-2/"
-      rel="noreferrer"
-    >
-      Technion
-    </a>{' '}
-    from the{' '}
-    <a
-      target="_blank"
-      href="https://academic.openu.ac.il/cs/computer/pages/default.aspx?_gl=1*nod8y5*_ga*MTgwMTk1OTM4My4xNjk1MTg1MTUy*_ga_D925SY5X0Q*MTY5NTE4NTE1Mi4xLjAuMTY5NTE4NTE1Mi42MC4wLjA."
-      rel="noreferrer"
-    >
-      Open University
-    </a>{' '}
-    using{' '}
-    <a
-      target="_blank"
-      href="https://www.openu.ac.il/transfertrack/technion/pages/default.aspx"
-      rel="noreferrer"
-    >
-      transfertrack
-    </a>
-    .
-  </>,
-  "At 25, as I write this (Sep 20 2023) I'm about to finish my B.Sc in a few days.",
+    <>
+        <h4 className="fs-500 fw-semi-bold">
+            Discovering the Spark (Age 16):
+        </h4>
+        My passion for programming ignited when I built my first PC and taught
+        myself to code.
+        That same year, I started to take courses in
+        Computer Science at the
+        {' '}<a
+            target="_blank"
+            href="https://www.openu.ac.il/young/pages/default.aspx"
+            rel="noreferrer"
+        >
+            Open University
+        </a>{' '}
+        — juggling full‑time studies with high‑school
+        coursework.
+    </>,
+    <>
+        <h4 className="fs-500 fw-semi-bold">
+            Exploring the Landscape (Ages 16–18)
+        </h4>
+        I dove into everything from web development and Linux server
+        administration to robo‑hack projects and basic AI <br />experiments - testing
+        out different languages (Python, C, JavaScript) and platforms
+        (Raspberry Pi, Arduino). <br />
+        That hands‑on tour helped me zero in on embedded systems and low‑level
+        programming, the domains I’m still passionate about today.
+    </>,
+    <>
+        <h4 className="fs-500 fw-semi-bold">
+            Service and Growth (Ages 18–20):
+        </h4>
+        Served as a System Administrator in the National Center of Encryption and
+        Information Security, building and deploying operational systems used
+        across all IDF units, ensuring their reliability and performance.
+        Contributed to the integration and deployment of new systems and
+        technologies to enhance operational capabilities.
+    </>,
+
+    <>
+        <h4 className="fs-500 fw-semi-bold">
+            Freelance Foundations (Age 21-26)
+        </h4>
+        I launched my freelance career on Fiverr, delivering custom software
+        solutions to clients around the world before and throughout my academic
+        studies—sharpening my problem‑solving skills and client communication
+        before transitioning into full‑time engineering roles.
+    </>,
+    <>
+        <h4 className="fs-500 fw-semi-bold">
+            Advancing Academically (Ages 22–25)
+        </h4>
+        I transferred from the Open University to the Technion through the
+        {' '}<a
+            target="_blank"
+            href="https://www.openu.ac.il/transfertrack/technion/pages/computer_science.aspx"
+            rel="noreferrer"
+        >
+            Afik Mahavar
+        </a>{' '}
+        program , focusing my coursework on AI and Operating Systems.
+        In 2024, I completed my B.Sc. in Computer Science eager to apply these advanced concepts in building robust, real‑world systems.
+    </>,
+    <>
+        <h4 className="fs-500 fw-semi-bold">
+            Current Status
+        </h4>
+        I’m now a software engineer at Skysoft Solutions, building Real-Time Embedded systems
+        — you can view my <a href="#/resume/#aaa">Full Resume</a>
+    </>
 ];
 const thingsILike: AboutElement[] = [
-  'Triathlon',
-  'Space',
-  'Aviation',
-  'Winter',
-  <>
-    Podcasts (
-    <a href="https://www.osimhistoria.com/osimhistoria">Osim Historia</a>,{' '}
-    <a href="https://www.hardreset.co.il">Hard Reset</a>)
-  </>,
+    <>
+        <h4 className="fs-500 fw-semi-bold">
+            Triathlon Training
+        </h4>
+        When I’m not at my desk, you’ll find me in the pool, on the bike,
+        or out on a run—pushing my body’s limits in preparation for my next triathlon.
+        The discipline and resilience I build in training carry straight over into my work.
+    </>,
+    <>
+        <h4 className="fs-500 fw-semi-bold">
+            Reverse‑Engineering & Problem Solving
+        </h4>
+        I love peeling back the layers of gadgets and protocols to see how they works.
+        I’ve spent countless hours chasing elusive bugs or undocumented behaviors—because
+        understanding the inner workings of a system is half the fun.
+    </>,
+    <>
+        <h4 className="fs-500 fw-semi-bold">
+            Home Automation & IoT
+        </h4>
+        From RF scanners to ESP32 sensors, I build end‑to‑end smart setups that monitor and control my environment.
+        Crafting these interconnected systems is a fun blend of hardware, firmware, and networking.
+    </>,
+    <>
+        <h4 className="fs-500 fw-semi-bold">
+        Space & Aviation
+        </h4>
+        I’m fascinated by flight dynamics, aerospace systems, and satellite communications. 
+            Whether it’s simulating drone autopilots or tracking rocket launches, I love exploring the technologies that keep us soaring.
+    </>,
 ];
 
 export { intro, someHistory, thingsILike };

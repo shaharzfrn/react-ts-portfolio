@@ -2,9 +2,6 @@ import { ReactElement } from 'react';
 
 type AboutElement = string | ReactElement;
 
-const intro: AboutElement[] = [
-    "I'm software engineer, working on embedded systems at Skysoft solutions",
-];
 const someHistory: AboutElement[] = [
     <>
         <h4 className="fs-500 fw-semi-bold">
@@ -111,4 +108,4 @@ const thingsILike: AboutElement[] = [
     </>,
 ];
 
-export { intro, someHistory, thingsILike };
+export { someHistory, thingsILike };

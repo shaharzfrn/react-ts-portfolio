@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import Page from '../layouts/Page';
 import Section from '../components/Section/Section';
 
-import { intro, someHistory, thingsILike } from '../assets/data/about';
+import { someHistory, thingsILike } from '../assets/data/about';
 import Age from '../components/Age';
 
 function useWordCount(id: string) {
@@ -41,9 +41,9 @@ function About() {
                         <span className="fw-semi-bold">Hi there</span>, <br />I&apos;m Shahar,{' '}
                         <Age /> years old software engineer based in Israel. <br />
                         I Specialize in designing and developing Real-Time Embedded systems at Skysoft Solutions.
-                            I love digging into how things work—sometimes I’ll sit for hours chasing down a solution or reverse‑engineering gadgets just to see what makes them tick.
-                            I also push my limits by training for triathlons, balancing swim, bike, and run workouts alongside my code.<br/>
-                            Whether you’d like to discuss embedded systems, reverse‑engineering techniques, triathlon training or ask for help, I’d love to hear from you!
+                        I love digging into how things work—sometimes I’ll sit for hours chasing down a solution or reverse‑engineering gadgets just to see what makes them tick.
+                        I also push my limits by training for triathlons, balancing swim, bike, and run workouts alongside my code.<br />
+                        Whether you’d like to discuss embedded systems, reverse‑engineering techniques, triathlon training or ask for help, I’d love to hear from you!
                     </p>
                 </Section>
                 <Section>
